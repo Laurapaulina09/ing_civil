@@ -1,7 +1,5 @@
 'use scrict'
 var mongoose=require('mongoose');
-var application=require('./application')
-
 var db_url='mongodb://localhost:27017/viviendasMedellin';
 mongoose.connect(db_url,
     (err,resp)=>{
@@ -10,9 +8,6 @@ mongoose.connect(db_url,
       }
       else{
           console.log('Conexion exitosa con la base de datos');
-          application.listen(8383,function(){
-          console.log('Ha iniciado el servidor Web');  
-          })
       }  
     }
     )

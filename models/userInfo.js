@@ -1,7 +1,7 @@
 'use strict'
 
 var  mongoose= require('mongoose');
-
+var Schema = mongoose.Schema
 
 var EmailValido=function(email){
     var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -13,7 +13,7 @@ var TelefonoValido=function validateTlf(phone) {
   return phone.match(phoneformat) 
 }
 
-var userInfoSchema=Schema({
+var userInfoSchema=new Schema({
   nombre:String,
   Apellido: String,
   Celular: {
