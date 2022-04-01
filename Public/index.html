@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="modal-wrap">
+        <div class="modal-header">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="modal-bodies">
+            
+            <div class="modal-body modal-body-step-1 is-showing">
+                <div class="title">Encuesta</div>
+                <div class="description ">Información del encuestado.</div>
+                <form>
+                    <input type="text" placeholder="Nombre" />
+                    <input type="text" placeholder="Apellido" />
+                    <input type="number" placeholder="Celular" />
+                    <input type="email" placeholder="Correo" />
+                    <input type="number" placeholder="Cédula" />
+                    <input type="text" placeholder="Dirección" />
+                    <input type="text" placeholder="Nombre de la unidad(opcional)" />
+                    <input type="text" placeholder="Departamento" />
+                    <input type="text" placeholder="Municipio" />
+                    <input type="text" placeholder="Barrio" />
+
+                    <div class="contenedor_radio_1">
+                        <input type="checkbox" name="" id="radio">
+                        <label for="">Autorizo el tratamiento de mis datos personales</label>
+                    </div>
+                    <div class="text-center">
+                        <div class="button">Continuar</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-2">
+                <div class="title">Nivel de formación</div>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Primaria">
+                        <label for="primaria">A. Primaria</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Bachillerato">
+                        <label for="Bachillerato">B. Bachillerato</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Técnico">
+                        <label for="">C. Técnico</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Tecnólogo">
+                        <label for="Tecnólogo">D. Tecnólogo</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Universitario">
+                        <label for="Universitario">E. Universitario</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Ninguna">
+                        <label for="Ninguna">F. Ninguna</label>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-3">
+                <div class="title">Año de construcción de su vivienda</div>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="1963">
+                        <label for="1963">A. Antes de 1963</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="1894">
+                        <label for="1984">B. Entre 1963 y 1984</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="1985">
+                        <label for="1985">C. Entre 1985 y 1997</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="1998">
+                        <label for="1998">D. Entre 1998 y 2010</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="2011">
+                        <label for="2011">E. A partir del 2011</label>
+                    </div>
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-4">
+                <div class="title">¿Fue construida por alguna entidad o empresa constructora?</div>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="si">
+                        <label for="si">A. Si</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="no">
+                        <label for="no">B. No</label>
+                    </div>
+                    <div class="constructora"> 
+                        <label for="nameConstructora">Nombre de la constructora(opcional): </label>
+                        <input type="text" id="nameConstructora" placeholder="" />
+                    </div>
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-5">
+                <div class="title">Área de la vivienda (frente*fondo)</div>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="20">
+                        <label for="20">A. 20 a 30 m<sup>2</sup</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="31">
+                        <label for="31">B. 31 a 40 m<sup>2</sup</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="41">
+                        <label for="41">C. 41 a 60 m<sup>2</sup</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="61">
+                        <label for="61">D. 61 a 70 m<sup>2</sup></label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="71">
+                        <label for="71">E. 71 a 80 m<sup>2</sup</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="81">
+                        <label for="81">F. 81 a 90 m<sup>2</sup</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="91">
+                        <label for="91">G. 91 m<sup>2</sup> o mayor </label>
+                    </div>
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-6">
+                <div class="title">Frente de su vivienda</div>
+                <div class="description">Adjunte una imagen donde se pueda ver su vivienda y las viviendas aledañas
+                </div>
+                <form>
+                    <div class="inputImage">
+                        <div>
+                            <label for="inputImage">Agregar Imagen</label>
+                            <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Image-512.png" alt="">
+                        </div>
+                        <input id="inputImage" accept="image/*" type="file">
+                    </div>
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-7">
+                <div class="title">Ubicación de la vivienda</div>
+                <form>
+                    <div onmouseover="mostrarMensaje('ladera')">
+                        <div id="ladera" class="mensajeInfo ocultar">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maxime est aut? Voluptatibus itaque, doloribus distinctio est sed sunt pariatur praesentium ipsa at voluptates excepturi, provident repellat? Praesentium, eos beatae!
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Ladera">
+                            <label for="Ladera">A. Ladera</label>
+                        </div>
+                        <img src="Ladera.jpg" width="230" height="130">
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Valle">
+                        <label for="Valle">B. Valle</label>
+                    </div>
+                    <img src="Valle.jpg" width="230" height="130">
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-8">
+                <div class="title">Elementos cercanos a la vivienda</div>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Quebrada">
+                        <label for="Quebrada">A. Quebrada</label>
+                    </div>
+                    <img src="Quebrada.jpg" width="230" height="130">
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Ladera">
+                        <label for="Ladera">B. Ladera</label>
+                    </div>
+                    <img src="Ladera.jpg" width="230" height="130">
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Valle">
+                        <label for="Valle">C. Valle</label>
+                    </div>
+                    <img src="Valle.jpg" width="230" height="130">
+                    <div class="text-center fade-in boton">
+                        <div class="button">Siguiente</div>
+                    </div>
+            </div>
+            </form>
+            <div class="modal-body modal-body-step-9">
+                <div class="title">Uso de la vivienda</div>
+                <div class="description">El uso actual predominante de la vivienda es:</div>
+                    <form>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Residencial">
+                            <label for="Residencial">A. Residencial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Comercial">
+                            <label for="Comercial">B. Comercial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Educacional">
+                            <label for="Educacional">C. Educacional</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Oficinas">
+                            <label for="Oficinas">D. Oficinas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Bodegas">
+                            <label for="Bodegas">E. Bodegas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Instalación">
+                            <label for="Instalación">F. Instalación deportiva</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="salud">
+                            <label for="salud">G.Centro de salud</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Industrial">
+                            <label for="Industrial">H.Centro de salud</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="Hotelero">
+                            <label for="Hotelero">I.Hotelero</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="radio" id="otro">
+                            <label for="otro">J.Otro</label>
+                        </div>
+                        <div class="text-center fade-in">
+                            <div class="button">Siguiente</div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="text-center">
+        <div class="rerun-button">ReRun</div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

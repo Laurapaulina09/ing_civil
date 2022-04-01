@@ -4,7 +4,7 @@ $('.button').click(function () {
         stepIndex = $step.index(),
         $pag = $('.modal-header span').eq(stepIndex);
 
-    if (stepIndex === 0 || stepIndex === 1 || stepIndex === 2) { step1($step, $pag); }
+    if (stepIndex === 0 || stepIndex === 1 || stepIndex === 2 || stepIndex === 3 || stepIndex === 4 || stepIndex === 5 || stepIndex === 6 || stepIndex === 7 ) { step1($step, $pag); }
     else { step3($step, $pag); }
 
 });
@@ -53,3 +53,8 @@ $('.rerun-button').click(function () {
         .siblings().removeClass('is-active');
     $(this).hide();
 });
+
+function mostrarMensaje(idElementoMostrar){
+    document.getElementById(idElementoMostrar).classList().remove('ocultar')
+    alert('wdewdw')
+}
