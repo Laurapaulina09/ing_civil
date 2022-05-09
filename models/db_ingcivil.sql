@@ -1202,8 +1202,10 @@ INSERT INTO `municipios` (`id_departamento`, `id_municipio`, `nombre_municipio`)
 -- Table `db_ingCivil`.`usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ingCivil`.`usuario` (
-  `nombre` VARCHAR(45) NOT NULL,
-  `apellido` VARCHAR(45) NOT NULL,
+  `pnombre` VARCHAR(45) NOT NULL,
+  `snombre` VARCHAR(45) NOT NULL,
+  `papellido` VARCHAR(45) NOT NULL,
+  `spapellido` VARCHAR(45) NOT NULL,
   `celular` VARCHAR(10) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
   `cedula` VARCHAR(45) NOT NULL,
