@@ -9,135 +9,144 @@
     <link rel="stylesheet" href="./index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./departamentos.js"></script>
+    <script src="./municipios.js"></script>
 </head>
 
 <body>
+    <div id="mensaje"></div>
     <div class="modal-wrap">
         <div class="modal-header">
             <span class="is-active"></span>
             <span></span>
             <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <div class="modal-bodies">
-            
+
+
             <div class="modal-body modal-body-step-1 is-showing">
+                <div class="img_login"><img width="100px" src="./Logo.jpg" alt=""></div>
+
                 <div class="title">Encuesta</div>
                 <div class="description ">Información del encuestado.</div>
                 <form>
-                    <input type="text" placeholder="Nombre" />
-                    <input type="text" placeholder="Apellido" />
-                    <input type="number" placeholder="Celular" />
-                    <input type="email" placeholder="Correo" />
-                    <input type="number" placeholder="Cédula" />
-                    <input type="text" placeholder="Dirección" />
-                    <input type="text" placeholder="Nombre de la unidad(opcional)" />
-                    <input type="text" placeholder="Departamento" />
-                    <input type="text" placeholder="Municipio" />
-                    <input type="text" placeholder="Barrio" />
+                    <input type="text" id="nombreUno" placeholder=" Primer nombre" />
+                    <input type="text" id="nombreDos" placeholder=" Segundo nombre" />
+                    <input type="text" id="apellidoUno" placeholder=" Primer apellido" />
+                    <input type="text" id="apellidoDos" placeholder=" Segundo apellido" />
+                    <input type="number" id="celular" placeholder="Celular" />
+                    <input type="email" id="email" placeholder="Correo" />
+                    <input type="number" id="cedula" placeholder="Cédula" />
+                    <input type="text" id="direccion" placeholder="Dirección" />
+                    <input type="text" id="nombreUnidad" placeholder="Nombre de la unidad(opcional)" />
+                    <select name="" id="departamento" onchange="selectMunicipio()">
+                        <option selected disabled>Selecciona el departamento</option>
+                    </select>
+                    <select name="" id="municipio">
+                        <option selected disabled>Selecciona el municipio</option>
+                        <option disabled>Selecciona el departamento</option>
+                    </select>
+                    <input type="text" id="barrio" placeholder="Barrio" />
 
                     <div class="contenedor_radio_1">
-                        <input type="checkbox" name="" id="radio">
-                        <label for="">Autorizo el tratamiento de mis datos personales</label>
+                        <input type="checkbox" name="" id="tratamiento">
+                        <label for="tratamientos">Autorizo el tratamiento de mis datos personales</label>
                     </div>
+                    <div id="mensaje"></div>
                     <div class="text-center">
-                        <div class="button">Continuar</div>
+                        <div class="button" id="parteUno">Continuar</div>
                     </div>
                 </form>
             </div>
             <div class="modal-body modal-body-step-2">
-                <div class="title">Nivel de formación</div>
                 <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Primaria">
-                        <label for="primaria">A. Primaria</label>
+                    <div>
+                        <div class="title">Nivel de formación</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Primaria">
+                            <label for="Primaria">A. Primaria</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Bachillerato">
+                            <label for="Bachillerato">B. Bachillerato</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Técnico">
+                            <label for="Técnico">C. Técnico</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Tecnólogo">
+                            <label for="Tecnólogo">D. Tecnólogo</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Universitario">
+                            <label for="Universitario">E. Universitario</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="formacion" id="Ninguna">
+                            <label for="Ninguna">F. Ninguna</label>
+                        </div>
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Bachillerato">
-                        <label for="Bachillerato">B. Bachillerato</label>
+                    <div class="mt-2">
+                        <div class="title">Año de construcción de su vivienda</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="anio" id="1963">
+                            <label for="1963">A. Antes de 1963</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="anio" id="1984">
+                            <label for="1984">B. Entre 1963 y 1984</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="anio" id="1985">
+                            <label for="1985">C. Entre 1985 y 1997</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="anio" id="1998">
+                            <label for="1998">D. Entre 1998 y 2010</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="anio" id="2011">
+                            <label for="2011">E. A partir del 2011</label>
+                        </div>
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Técnico">
-                        <label for="">C. Técnico</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Tecnólogo">
-                        <label for="Tecnólogo">D. Tecnólogo</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Universitario">
-                        <label for="Universitario">E. Universitario</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Ninguna">
-                        <label for="Ninguna">F. Ninguna</label>
+                    <div class="mt-2">
+                        <div class="title">¿Fue construida por alguna entidad o empresa constructora?</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entidad" id="Si">
+                            <label for="Si">A. Si</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entidad" id="No">
+                            <label for="No">B. No</label>
+                        </div>
+                        <div class="constructora">
+                            <label for="nameConstructora">Nombre de la constructora(opcional): </label>
+                            <input type="text" id="nameConstructora" placeholder="" />
+                        </div>
                     </div>
                     <div class="text-center fade-in">
-                        <div class="button">Siguiente</div>
+                        <div id="parteDos" class="button">Siguiente</div>
                     </div>
                 </form>
             </div>
             <div class="modal-body modal-body-step-3">
-                <div class="title">Año de construcción de su vivienda</div>
-                <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="1963">
-                        <label for="1963">A. Antes de 1963</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="1894">
-                        <label for="1984">B. Entre 1963 y 1984</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="1985">
-                        <label for="1985">C. Entre 1985 y 1997</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="1998">
-                        <label for="1998">D. Entre 1998 y 2010</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="2011">
-                        <label for="2011">E. A partir del 2011</label>
-                    </div>
-                    <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-body modal-body-step-4">
-                <div class="title">¿Fue construida por alguna entidad o empresa constructora?</div>
-                <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="si">
-                        <label for="si">A. Si</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="no">
-                        <label for="no">B. No</label>
-                    </div>
-                    <div class="constructora"> 
-                        <label for="nameConstructora">Nombre de la constructora(opcional): </label>
-                        <input type="text" id="nameConstructora" placeholder="" />
-                    </div>
-                    <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-body modal-body-step-5">
                 <div class="title">Área de la vivienda (frente*fondo)</div>
                 <form>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="20">
-                        <label for="20">A. 20 a 30 m<sup>2</sup</label>
+                        <label for="20">A. 20 a 30 m<sup>2</sup></label>
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="31">
-                        <label for="31">B. 31 a 40 m<sup>2</sup</label>
+                        <label for="31">B. 31 a 40 m<sup>2</sup></label>
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="41">
-                        <label for="41">C. 41 a 60 m<sup>2</sup</label>
+                        <label for="41">C. 41 a 60 m<sup>2</sup></label>
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="61">
@@ -145,11 +154,11 @@
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="71">
-                        <label for="71">E. 71 a 80 m<sup>2</sup</label>
+                        <label for="71">E. 71 a 80 m<sup>2</sup></label>
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="81">
-                        <label for="81">F. 81 a 90 m<sup>2</sup</label>
+                        <label for="81">F. 81 a 90 m<sup>2</sup></label>
                     </div>
                     <div class="contenedor_radio label">
                         <input type="radio" name="radio" id="91">
@@ -182,7 +191,9 @@
                 <form>
                     <div onmouseover="mostrarMensaje('ladera')">
                         <div id="ladera" class="mensajeInfo ocultar">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maxime est aut? Voluptatibus itaque, doloribus distinctio est sed sunt pariatur praesentium ipsa at voluptates excepturi, provident repellat? Praesentium, eos beatae!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maxime est aut?
+                            Voluptatibus itaque, doloribus distinctio est sed sunt pariatur praesentium ipsa at
+                            voluptates excepturi, provident repellat? Praesentium, eos beatae!
                         </div>
                         <div class="contenedor_radio label">
                             <input type="radio" name="radio" id="Ladera">
@@ -226,51 +237,51 @@
             <div class="modal-body modal-body-step-9">
                 <div class="title">Uso de la vivienda</div>
                 <div class="description">El uso actual predominante de la vivienda es:</div>
-                    <form>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Residencial">
-                            <label for="Residencial">A. Residencial</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Comercial">
-                            <label for="Comercial">B. Comercial</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Educacional">
-                            <label for="Educacional">C. Educacional</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Oficinas">
-                            <label for="Oficinas">D. Oficinas</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Bodegas">
-                            <label for="Bodegas">E. Bodegas</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Instalación">
-                            <label for="Instalación">F. Instalación deportiva</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="salud">
-                            <label for="salud">G.Centro de salud</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Industrial">
-                            <label for="Industrial">H.Centro de salud</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Hotelero">
-                            <label for="Hotelero">I.Hotelero</label>
-                        </div>
-                        <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="otro">
-                            <label for="otro">J.Otro</label>
-                        </div>
-                        <div class="text-center fade-in">
-                            <div class="button">Siguiente</div>
-                        </div>
-                    </form>
+                <form>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Residencial">
+                        <label for="Residencial">A. Residencial</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Comercial">
+                        <label for="Comercial">B. Comercial</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Educacional">
+                        <label for="Educacional">C. Educacional</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Oficinas">
+                        <label for="Oficinas">D. Oficinas</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Bodegas">
+                        <label for="Bodegas">E. Bodegas</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Instalación">
+                        <label for="Instalación">F. Instalación deportiva</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="salud">
+                        <label for="salud">G.Centro de salud</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Industrial">
+                        <label for="Industrial">H.Centro de salud</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="Hotelero">
+                        <label for="Hotelero">I.Hotelero</label>
+                    </div>
+                    <div class="contenedor_radio label">
+                        <input type="radio" name="radio" id="otro">
+                        <label for="otro">J.Otro</label>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="button">Siguiente</div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -279,6 +290,7 @@
         <div class="rerun-button">ReRun</div>
     </div>
     <script src="./index.js"></script>
+    <script src="./components/infoMensaje.js"></script>
 </body>
 
 </html>

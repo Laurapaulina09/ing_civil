@@ -21,7 +21,7 @@ html {
 
 input[type=text],
 input[type=email],
-input[type=number]{
+input[type=number] {
   padding: 10px 20px;
   border: 1px solid #999;
   border-radius: 3px;
@@ -31,6 +31,7 @@ input[type=number]{
   box-sizing: border-box;
   outline: none;
 }
+
 input[type=text]:focus,
 input[type=email]:focus {
   border-color: #FF6F00;
@@ -41,19 +42,20 @@ input[type=radio] {
 }
 
 
-.contenedor_radio_1{
-    margin-bottom: 15px ;
+.contenedor_radio_1 {
+  margin-bottom: 15px;
 }
 
 
 .label {
-  margin-bottom :0px !important;
+  margin-bottom: 0px !important;
   font-size: 18px;
   color: #666;
   padding: 5px 0;
   cursor: pointer;
 }
-.label input{
+
+.label input {
   margin-bottom: 0;
   border-bottom: none;
 }
@@ -69,10 +71,12 @@ input[type=radio] {
   display: inline-block;
   cursor: pointer;
 }
+
 .button:hover,
 .rerun-button:hover {
   background: #e66400;
 }
+
 .button.rerun-button,
 .rerun-button.rerun-button {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -80,8 +84,9 @@ input[type=radio] {
   box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
   display: none;
 }
+
 .boton {
-  padding-top:20px; 
+  padding-top: 20px;
 }
 
 .text-center {
@@ -102,6 +107,7 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
 }
+
 .modal-header span {
   display: block;
   height: 12px;
@@ -110,6 +116,7 @@ input[type=radio] {
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.2);
 }
+
 .modal-header span.is-active {
   background: rgba(0, 0, 0, 0.4);
   background: #FF8F00;
@@ -132,18 +139,19 @@ input[type=radio] {
   width: 100%;
   transform-origin: top left;
 }
+
 .modal-body.is-showing {
   display: block;
 }
 
 .animate-out {
   -webkit-animation: out 600ms ease-in-out forwards;
-          animation: out 600ms ease-in-out forwards;
+  animation: out 600ms ease-in-out forwards;
 }
 
 .animate-in {
   -webkit-animation: in 500ms ease-in-out forwards;
-          animation: in 500ms ease-in-out forwards;
+  animation: in 500ms ease-in-out forwards;
   display: block;
 }
 
@@ -155,9 +163,11 @@ input[type=radio] {
   0% {
     transform: translateY(0px) rotate(0deg);
   }
+
   60% {
     transform: rotate(60deg);
   }
+
   100% {
     transform: translateY(800px) rotate(10deg);
   }
@@ -167,57 +177,67 @@ input[type=radio] {
   0% {
     transform: translateY(0px) rotate(0deg);
   }
+
   60% {
     transform: rotate(60deg);
   }
+
   100% {
     transform: translateY(800px) rotate(10deg);
   }
 }
+
 @-webkit-keyframes in {
   0% {
     opacity: 0;
     transform: rotateX(-90deg);
   }
+
   100% {
     opacity: 1;
     transform: rotateX(0deg);
   }
 }
+
 @keyframes in {
   0% {
     opacity: 0;
     transform: rotateX(-90deg);
   }
+
   100% {
     opacity: 1;
     transform: rotateX(0deg);
   }
 }
-.constructora{
+
+.constructora {
   display: flex;
   align-items: center;
 }
-.constructora>input{
+
+.constructora>input {
   width: 130px;
-  margin-left:5px;
+  margin-left: 5px;
   border: none;
   border-bottom: 2px solid;
 }
-.inputImage{
+
+.inputImage {
   width: 200px;
   height: 46px;
   display: block;
-  background-color:rgb(251, 250, 250);
+  background-color: rgb(251, 250, 250);
   overflow: hidden;
   position: relative;
   border-radius: 5px;
-  box-shadow: 4px 6px 12px -6px rgba(0,0,0,0.75);
-  font-size:16px;
+  box-shadow: 4px 6px 12px -6px rgba(0, 0, 0, 0.75);
+  font-size: 16px;
   margin: auto;
 }
-.inputImage>div{
-  top:0px;
+
+.inputImage>div {
+  top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
@@ -225,23 +245,42 @@ input[type=radio] {
   justify-content: space-around;
   align-items: center;
 }
-.inputImage img{
+
+.inputImage img {
   width: 40px;
 }
-.inputImage input{
+
+.inputImage input {
   position: absolute;
-  width:100%;
-  height:48px;
+  width: 100%;
+  height: 48px;
   top: 0px;
   left: 0px;
   opacity: 0;
   cursor: pointer;
 }
 
-.mensajeInfo{
-  border:1px solid black;
+.mensajeInfo {
+  border: 1px solid black;
   padding: 10px;
 }
-.ocultar{
+
+.ocultar {
   display: none;
+}
+
+.img_login {
+  text-align: center;
+  margin-top: 5px;
+
+}
+#departamento, #municipio{
+  width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+.mt-2{
+  margin-top: 20px;
 }

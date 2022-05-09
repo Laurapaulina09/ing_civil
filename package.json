@@ -1,4 +1,15 @@
 {
+  "name": "galu",
+  "version": "1.0.0",
+  "description": "Proyecto Ingenieria Civil",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laurapaulina09/ing_civil.git"
+  },
   "dependencies": {
     "body-parser": "^1.19.2",
     "dotenv": "^16.0.0",
@@ -10,6 +21,6 @@
     "reload": "^3.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
