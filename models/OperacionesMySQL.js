@@ -90,6 +90,7 @@ Conexion.almacenarEncuestaP5 = (datos, cb) => {
         equiposDentroDeLaEdificacion="${datos.equiposGrandes}", 
         equiposDentroDeLaEdificacionPuntos="${datos.equiposGrandesPts}"
         WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+        console.log(datos);
     conectar.query(sql, function (err, res) {
         if (err) {
             console.log(err)
@@ -108,6 +109,7 @@ Conexion.almacenarEncuestaP6 = (datos, cb) => {
         numSotanos="${datos.parqueadero}",
         numSotanosPuntos="${datos.parqueaderoPts}"
         WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+        console.log(datos);
     conectar.query(sql, function (err, res) {
         if (err) {
             console.log(err)
