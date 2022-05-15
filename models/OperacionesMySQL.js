@@ -47,11 +47,15 @@ Conexion.almacenarEncuestaP3A = (datos, cb) => {
 }
 
 Conexion.almacenarImagenEnViviendas = (datos, cb) => {
-    let  sql = `UPDATE ${datos.nombreTabla}" SET "${datos.columna}" ="${datos.imagenFrente}" 
-    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}"))`;
+    let  sql = `UPDATE ${datos.nombreTabla} 
+    SET ${datos.columna}="${datos.imagenFrente}" 
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+    //console.log(datos);
+    console.log("errorr");
+    console.log(sql);
     conectar.query(sql, function(err, res) {
         if (err) {
-            console.log("error al almacenar la imagen en la tabla: "+nombretabla)
+            console.log("error al almacenar la imagen en la tabla: "+datos.nombreTabla)
             console.log(err);
             throw err;
         } else {
@@ -82,7 +86,6 @@ Conexion.almacenarEncuestaP4 = (datos, cb) => {
     })
 }
 
-
 Conexion.almacenarEncuestaP5 = (datos, cb) => {
     let sql = `UPDATE  EncuestaViviendaExterior
         SET comparteMurosConVecinos= "${datos.comparteMuro}",
@@ -90,7 +93,10 @@ Conexion.almacenarEncuestaP5 = (datos, cb) => {
         equiposDentroDeLaEdificacion="${datos.equiposGrandes}", 
         equiposDentroDeLaEdificacionPuntos="${datos.equiposGrandesPts}"
         WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+        console.log("DATOS");
         console.log(datos);
+        console.log("SQL");
+        console.log(sql);
     conectar.query(sql, function (err, res) {
         if (err) {
             console.log(err)
@@ -109,7 +115,10 @@ Conexion.almacenarEncuestaP6 = (datos, cb) => {
         numSotanos="${datos.parqueadero}",
         numSotanosPuntos="${datos.parqueaderoPts}"
         WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+        console.log("DATOS");
         console.log(datos);
+        console.log("SQL");
+        console.log(sql);
     conectar.query(sql, function (err, res) {
         if (err) {
             console.log(err)

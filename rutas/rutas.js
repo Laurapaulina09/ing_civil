@@ -64,11 +64,11 @@ rutas
 })
 
 //Falta Probar, no tengo como hacerlo en este momento
-.put('/p3BsubirImagenFrente', multer.single('foto'), (req, res) => {
+.put('/p3BsubirImagenFrente/:cedula', multer.single('foto'), (req, res) => {
     console.log('Se ha cargado la foto')
-    datos={
+    let datos={
         imagenFrente:`\\\\img\\\\${req.file.filename}`,
-        cedula:req.body.cedula,
+        cedula:req.params.cedula,
         nombreTabla:'EncuestaViviendaExterior',
         columna:'imagenFrente',
     }
@@ -126,7 +126,7 @@ rutas
         parqueaderoPts: parametros.parqueaderoPts,
         cedula:parametros.cedula
     }
-    conectar.almacenarEncuestaP5(datos, () => {
+    conectar.almacenarEncuestaP6(datos, () => {
         res.status(200).send({
             menssage:"Se ha añadido la Parte 6"
              });
