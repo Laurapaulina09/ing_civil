@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `db_ingcivil`.`Encuesta` (
     REFERENCES `db_ingcivil`.`usuario` (`cedula`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------

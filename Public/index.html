@@ -23,10 +23,11 @@
             <span></span>
             <span></span>
             <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <div class="modal-bodies">
-
-
             <div class="modal-body modal-body-step-1 is-showing">
                 <div class="img_login"><img width="100px" src="./Logo.jpg" alt=""></div>
 
@@ -93,34 +94,34 @@
                     <div class="mt-2">
                         <div class="title">Año de construcción de su vivienda</div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="anio" id="1963">
+                            <input type="radio" name="anio" id="1963" puntos="4">
                             <label for="1963">A. Antes de 1963</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="anio" id="1984">
+                            <input type="radio" name="anio" id="1984" puntos="3">
                             <label for="1984">B. Entre 1963 y 1984</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="anio" id="1985">
+                            <input type="radio" name="anio" id="1985" puntos="3">
                             <label for="1985">C. Entre 1985 y 1997</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="anio" id="1998">
+                            <input type="radio" name="anio" id="1998" puntos="2">
                             <label for="1998">D. Entre 1998 y 2010</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="anio" id="2011">
+                            <input type="radio" name="anio" id="2011" puntos="1">
                             <label for="2011">E. A partir del 2011</label>
                         </div>
                     </div>
                     <div class="mt-2">
                         <div class="title">¿Fue construida por alguna entidad o empresa constructora?</div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="entidad" id="Si">
+                            <input type="radio" name="entidad" id="Si" puntos="0">
                             <label for="Si">A. Si</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="entidad" id="No">
+                            <input type="radio" name="entidad" id="No" puntos="3">
                             <label for="No">B. No</label>
                         </div>
                         <div class="constructora">
@@ -134,163 +135,756 @@
                 </form>
             </div>
             <div class="modal-body modal-body-step-3">
-                <div class="title">Área de la vivienda (frente*fondo)</div>
                 <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="20">
-                        <label for="20">A. 20 a 30 m<sup>2</sup></label>
+                    <div>
+                        <div class="title">Área de la vivienda (frente*fondo)</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="20">
+                            <label for="20">A. 20 a 30 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="31">
+                            <label for="31">B. 31 a 40 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="41">
+                            <label for="41">C. 41 a 60 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="61">
+                            <label for="61">D. 61 a 70 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="71">
+                            <label for="71">E. 71 a 80 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="81">
+                            <label for="81">F. 81 a 90 m<sup>2</sup></label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="area" id="91">
+                            <label for="91">G. 91 m<sup>2</sup> o mayor </label>
+                        </div>
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="31">
-                        <label for="31">B. 31 a 40 m<sup>2</sup></label>
+                    <div class="frente">
+                        <div class="title mt-2">Frente de su vivienda</div>
+                        <div class="description">Adjunte una imagen donde se pueda ver su vivienda y las viviendas
+                            aledañas
+                        </div>
+                        <div id="imagenFrenteVivienda"></div>
+                        <div class="inputImage">
+                            <div>
+                                <label for="inputImageCasaFrente">Agregar Imagen</label>
+                                <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Image-512.png" alt="">
+                            </div>
+                            <input id="inputImageCasaFrente" accept="image/*" type="file">
+                        </div>
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="41">
-                        <label for="41">C. 41 a 60 m<sup>2</sup></label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="61">
-                        <label for="61">D. 61 a 70 m<sup>2</sup></label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="71">
-                        <label for="71">E. 71 a 80 m<sup>2</sup></label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="81">
-                        <label for="81">F. 81 a 90 m<sup>2</sup></label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="91">
-                        <label for="91">G. 91 m<sup>2</sup> o mayor </label>
+                    <div class="Ubicacion">
+                        <div class="title mt-2">Ubicación de la vivienda</div>
+                        <div>
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="ladera" class="mensajeOculto">
+                                    <b>Ladera</b> Pendiente de una montaña o elevación del terreno por cualquiera de sus
+                                    lados.
+                                </div>
+                                <input type="radio" name="ubicacionVivienda" id="Ladera" puntos="2">
+                                <label for="Ladera">A. Ladera</label>
+                            </div>
+                            <div class="mostrarMensaje">
+                                <img src="Ladera.jpg" width="230" height="130">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="ladera" class="mensajeOculto">
+                                    <b>Valle</b> Es una depresión entre dos vertientes o montañas
+                                </div>
+                                <input type="radio" name="ubicacionVivienda" id="Valle" puntos="1">
+                                <label for="Valle">B. Valle</label>
+                            </div>
+                            <div class="mostrarMensaje">
+                                <img src="Valle.jpg" width="230" height="130">
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
+                        <div id="parteTres" class="button">Siguiente</div>
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-6">
-                <div class="title">Frente de su vivienda</div>
-                <div class="description">Adjunte una imagen donde se pueda ver su vivienda y las viviendas aledañas
-                </div>
+            <div class="modal-body modal-body-step-4 ">
                 <form>
-                    <div class="inputImage">
+                    <div>
+                        <div class="title">Elementos cercanos a la vivienda</div>
                         <div>
-                            <label for="inputImage">Agregar Imagen</label>
-                            <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Image-512.png" alt="">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div class="mensajeOculto">
+                                    Arroyo que corre por una zona montañosa encajonado entre valles.
+                                </div>
+                                <input type="radio" name="elementosCercanos" id="Quebrada" puntos="2">
+                                <label for="Quebrada">A. Quebrada</label>
+                            </div>
+                            <div class="mostrarMensaje">
+                                <img src="Quebrada.jpg" width="230" height="130">
+                            </div>
                         </div>
-                        <input id="inputImage" accept="image/*" type="file">
+                        <div>
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div class="mensajeOculto">
+                                    Es una depresión entre dos vertientes o montañas
+                                </div>
+                                <input type="radio" name="elementosCercanos" id="Valle" puntos="1">
+                                <label for="Valle">B. Valle</label>
+                            </div>
+                            <div class="mostrarMensaje">
+                                <img src="Valle.jpg" width="230" height="130">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="contenedor_radio cajaMensaje">
+                                <div class="mensajeOculto">
+                                    Elevación natural del terreno de gran altura.
+                                </div>
+                                <input type="radio" name="elementosCercanos" id="montana" puntos="2">
+                                <label for="montana">C.Montaña</label>
+                            </div>
+                            <div class="mostrarMensaje">
+                                <img src="montaña.jpg" width="230" height="130">
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
+                    <div class="uso_vivienda">
+                        <div class="title mt-2">Uso de la vivienda</div>
+                        <div class="description">El uso actual predominante de la vivienda es:</div>
+                        <form>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Residencial" puntos="0">
+                                <label for="Residencial">A. Residencial</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Comercial" puntos="1">
+                                <label for="Comercial">B. Comercial</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Educacional" puntos="2">
+                                <label for="Educacional">C. Educacional</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Oficinas" puntos="2">
+                                <label for="Oficinas">D. Oficinas</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Bodegas" puntos="3">
+                                <label for="Bodegas">E. Bodegas</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Instalación" puntos="3">
+                                <label for="Instalación">F. Instalación deportiva</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="salud" puntos="2">
+                                <label for="salud">G.Centro de salud</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Industrial" puntos="4">
+                                <label for="Industrial">H.Industrial</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="Hotelero" puntos="2">
+                                <label for="Hotelero">I.Hotelero</label>
+                            </div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="usoVivienda" id="otro" puntos="0">
+                                <label for="otro">J.Otro</label>
+                                <input class="otroInput" placeholder="¿Cuál?" id="otroUsoVivienda" type="text">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="uso">
+                        <div class="description mt-2">La vivienda anteriormente tuvo un uso diferente al actual</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnteriorDiferente" id="Si">
+                            <label for="Si">A.Si</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnteriorDiferente" id="No">
+                            <label for="No">B.No</label>
+                        </div>
+                    </div>
+                    <!-- respuesta  si, debe salir esta pregunta  y luego la siguiente-->
+                    <div id="usoDiferenteSi" class="ocultar">
+                        <div class="description mt-2">El uso de la vivienda anteriormente era:</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Residencial">
+                            <label for="Residencial">A. Residencial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Comercial">
+                            <label for="Comercial">B. Comercial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Educacional">
+                            <label for="Educacional">C. Educacional</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Oficinas">
+                            <label for="Oficinas">D. Oficinas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Bodegas">
+                            <label for="Bodegas">E. Bodegas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Instalación">
+                            <label for="Instalación">F. Instalación deportiva</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="salud">
+                            <label for="salud">G.Centro de salud</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Industrial">
+                            <label for="Industrial">H.Industrial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="Hotelero">
+                            <label for="Hotelero">I.Hotelero</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoAnterior" id="otro">
+                            <label for="otro">J.Otro</label>
+                            <input class="otroInput" placeholder="¿Cuál?" id="otroUsoAnterior" type="text">
+                        </div>
+                        <!-- respuesta no, debe salir esta pregunta -->
+                    </div>
+                    <div class="primer_piso">
+                        <div class="description mt-2">El uso de la vivienda del primer piso es:</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Residencial" puntos="0">
+                            <label for="Residencial">A. Residencial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Comercial" puntos="1">
+                            <label for="Comercial">B. Comercial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Educacional" puntos="2">
+                            <label for="Educacional">C. Educacional</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Oficinas" puntos="2">
+                            <label for="Oficinas">D. Oficinas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Bodegas" puntos="3">
+                            <label for="Bodegas">E. Bodegas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Instalación" puntos="3">
+                            <label for="Instalación">F. Instalación deportiva</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="salud" puntos="2">
+                            <label for="salud">G.Centro de salud</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Industrial" puntos="4">
+                            <label for="Industrial">H.Industrial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="Hotelero" puntos="2">
+                            <label for="Hotelero">I.Hotelero</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="usoPisoUno" id="NoAplica" puntos="0">
+                            <label for="NoAplica">J.No Aplica</label>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div id="parteCuatro" class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-5 ">
+                <form>
+                    <div>
+                        <div class="title mt-2">Número de pisos</div>
+                        <div class="description">El total de pisos de la vivienda es:</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="1" puntos="1">
+                            <label for="1">A.1</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="2" puntos="1">
+                            <label for="2">B.2</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="3" puntos="1">
+                            <label for="3">C.3</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="4" puntos="2">
+                            <label for="4">D.4</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="5" puntos="2">
+                            <label for="5">E.5</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="6" puntos="2">
+                            <label for="6">F.6</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="numPisos" id="7" puntos="3">
+                            <label for="7">G.7 o mas </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="description mt-2">La vivienda se encuentra ubicada en el piso:</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="1" puntos="1">
+                            <label for="1">A.1</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="2" puntos="1">
+                            <label for="2">B.2</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="3" puntos="1">
+                            <label for="3">C.3</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="4" puntos="2">
+                            <label for="4">D.4</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="5" puntos="2">
+                            <label for="5">E.5</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="6" puntos="2">
+                            <label for="6">F.6</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="ubicacionPiso" id="7" puntos="3">
+                            <label for="7">G.7 o mas </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="description mt-2">Sótanos (incluye parqueaderos subterráneos)</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="ninguno" puntos="0">
+                            <label for="ninguno">A.ninguno</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="1" puntos="1">
+                            <label for="1">B.1</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="2" puntos="2">
+                            <label for="2">C.2</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="3" puntos="3">
+                            <label for="3">D.3</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="4" puntos="3">
+                            <label for="4">E.4</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="parqueadero" id="5" puntos="4">
+                            <label for="5">F.5 o mas </label>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div id="parteCinco" class="button">Siguiente</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-6 ">
+                <form>
+                    <div>
+                        <div class="title">Posibilidad de golpeteo con edificaciones</div>
+                        <div class="description">Comparte muro con los vecinos de al lado</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="comparteMuro" id="Si" puntos="3">
+                            <label for="Si">A.Si</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="comparteMuro" id="No" puntos="0">
+                            <label for="No">B.No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="title">Elementos Espaciales</div>
+                        <div class="description">Hay presencia de equipos (grandes) dentro de la edificación.</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Piscinas" puntos="4">
+                            <label for="Piscinas">A.Piscinas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Canchas" puntos="3">
+                            <label for="Canchas">B.Canchas</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Gimnasio" puntos="3">
+                            <label for="Gimnasio">C.Máquinas de gimnasio</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Agua" puntos="4">
+                            <label for="Agua">D.Tanques de agua</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Maquinaria" puntos="4">
+                            <label for="Maquinaria">E.Maquinaria Industrial</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Almacenamientos" puntos="3">
+                            <label for="Almacenamientos">F.Almacenamientos </label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Ninguna" puntos="0">
+                            <label for="Ninguna">G.Ninguna de las anteriores</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="equiposGrandes" id="Otro" puntos="0">
+                            <label for="Otro">H.Otro</label>
+                            <input class="otroInput" placeholder="¿Cuál?" id="otroEquipoGrande" type="text">
+                        </div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div id="parteSeis" class="button">Siguiente</div>
                     </div>
                 </form>
             </div>
             <div class="modal-body modal-body-step-7">
-                <div class="title">Ubicación de la vivienda</div>
                 <form>
-                    <div onmouseover="mostrarMensaje('ladera')">
-                        <div id="ladera" class="mensajeInfo ocultar">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maxime est aut?
-                            Voluptatibus itaque, doloribus distinctio est sed sunt pariatur praesentium ipsa at
-                            voluptates excepturi, provident repellat? Praesentium, eos beatae!
+                    <div>
+                        <div class="title">Interior de la vivienda</div>
+                        <div class="description">Altura entre pisos (el piso de la vivienda al techo)</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="alturaEntrePisos" id="2mts" puntos="1">
+                            <label for="2mts">A.2 mts</label>
                         </div>
                         <div class="contenedor_radio label">
-                            <input type="radio" name="radio" id="Ladera">
-                            <label for="Ladera">A. Ladera</label>
+                            <input type="radio" name="alturaEntrePisos" id="2.5mts" puntos="2">
+                            <label for="2.5mts">B.2.1 a 2.5 mts</label>
                         </div>
-                        <img src="Ladera.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="alturaEntrePisos" id="2.6mts" puntos="3">
+                            <label for="2.6mts">C.2.6 a 3 mts</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="alturaEntrePisos" id="3.1mts" puntos="3">
+                            <label for="3.1mts">D.3.1 o mas</label>
+                        </div>
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Valle">
-                        <label for="Valle">B. Valle</label>
+                    <div>
+                        <div class="title">Descripcion de la vivienda </div>
+                        <div class="description">Material de construcción.</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="Mamposteria" puntos="2">
+                            <label for="Mamposteria">A.Mamposteria</label>
+                        </div>
+                        <img src="Mamposteria.png" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="B.Concreto" puntos="1">
+                            <label for="Concreto">B.Concreto reforzado.</label>
+                        </div>
+                        <img src="concreto_reforzado.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="Prefabricado" puntos="2">
+                            <label for="Prefabricado">C.Prefabricado</label>
+                        </div>
+                        <img src="prefabricado.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="Acero" puntos="1">
+                            <label for="Acero">D.Acero</label>
+                        </div>
+                        <img src="Acero.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="madera" puntos="2">
+                            <label for="madera">E.Madera</label>
+                        </div>
+                        <img src="madera.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="adobes" puntos="3">
+                            <label for="madera">F.Adobes</label>
+                        </div>
+                        <img src="adobes.png" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="tapia" puntos="3">
+                            <label for="tapia">G.Tapia</label>
+                        </div>
+                        <img src="tapia.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="guadua" puntos="3">
+                            <label for="guadua">H.guadua</label>
+                        </div>
+                        <img src="guadua.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="descripcionVivienda" id="otro" puntos="0">
+                            <label for="otro">I.Otro</label>
+                            <input class="otroInput" placeholder="¿Cuál?" id="otroDescripcionVivienda" type="text">
+                        </div>
                     </div>
-                    <img src="Valle.jpg" width="230" height="130">
-                    <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
+                    <br>
+                    <div>
+                        <!-- si escogio mamposteria -->
+                        <div id="mamposteria" class="ocultarHijos">
+                            <div class="description">Tipo de mamposteria</div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="Reforzada" puntos="1">
+                                <label for="Reforzada">A.Reforzada</label>
+                            </div>
+                            <img src="/img/mamp_reforzada.gif" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="noReforzada" puntos="1">
+                                <label for="noReforzada">B.No reforzada</label>
+                            </div>
+                            <img src="/img/mamp_noreforz.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="Confinada" puntos="1">
+                                <label for="Confinada">C.Confinada</label>
+                            </div>
+                            <img src="/img/mam_confinada.jpg" width="230" height="130">
+                        </div>
+                        <!-- si escogio concreto reforzado -->
+                        <div id="concreto" class="ocultarHijos">
+                            <div class="description">Concreto reforzado</div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="Muro" puntos="1">
+                                <label for="Muro">A.Muro estructural</label>
+                            </div>
+                            <img src="/img/muro_estructural.JPG" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="portico" puntos="1">
+                                <label for="portico">B.Pórtico</label>
+                            </div>
+                            <img src="img/portico.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="dualComb" puntos="1">
+                                <label for="dualComb">C.Sistema Dual o combinado</label>
+                            </div>
+                            <img src="/img/dual_combinado.png" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="pref" puntos="2">
+                                <label for="pref">D.Prefabricado</label>
+                            </div>
+                            <img src="/img/prefabricado.jpg" width="230" height="130">
+                        </div>
+                        <!-- si escogio prefabricado-->
+                        <div id="prefabricado" class="ocultarHijos">
+                            <div class="description">Prefabricado</div>
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="yeso" puntos="2">
+                                <label for="yeso">A.yeso</label>
+                            </div>
+                            <img src="/img/yeso.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="maderita" puntos="2">
+                                <label for="maderita">B.Madera</label>
+                            </div>
+                            <img src="/img/pref_madera.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="pvc" puntos="2">
+                                <label for="pvc">C.Pvc</label>
+                            </div>
+                            <img src="/img/PVC.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="drywall" puntos="3">
+                                <label for="drywall">D.Drywall</label>
+                            </div>
+                            <img src="/img/drywall.jpg" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="fibrocemento" puntos="1">
+                                <label for="fibrocemento">E.Fibrocemento</label>
+                            </div>
+                            <img src="/img/fibrocemento.png" width="230" height="130">
+                            <div class="contenedor_radio label">
+                                <input type="radio" name="tipo_select" id="otro" puntos="0">
+                                <label for="otro">F.Otro</label>
+                                <input class="otroInput" placeholder="¿Cuál?" id="otroTipoSelect" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center fade-in">
+                        <div id="parteSiete" class="button">Siguiente</div>
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-8">
-                <div class="title">Elementos cercanos a la vivienda</div>
+            <div class="modal-body modal-body-step-8 ">
                 <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Quebrada">
-                        <label for="Quebrada">A. Quebrada</label>
+                    <div>
+                        <div class="title">Tipo de entrepiso </div>
+                        <div class="description">Como se encuentra construido el piso de la vivienda</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entrepiso" id="losa" puntos="1">
+                            <label for="losa">A.Losa de concreto aligerado</label>
+                        </div>
+                        <img src="/img/Losa.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entrepiso" id="losaMacisa" puntos="1">
+                            <label for="losa_macisa">B.Losa de concreto maciza</label>
+                        </div>
+                        <img src="/img/losa_maciza.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entrepiso" id="vigasMadera" puntos="2">
+                            <label for="vigasMadera">C.Vigas de madera</label>
+                        </div>
+                        <img src="/img/vigas_madera.png" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="entrepiso" id="vigasAcero" puntos="1">
+                            <label for="vigasAcero">D.Vigas de acero</label>
+                        </div>
+                        <img src="/img/viga_acero.jpg" width="230" height="130">
                     </div>
-                    <img src="Quebrada.jpg" width="230" height="130">
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Ladera">
-                        <label for="Ladera">B. Ladera</label>
+                    <br>
+                    <div>
+                        <div class="title">Tipo de techo o cubierta</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="losaConcreto" puntos="1">
+                            <label for="losaConcreto">A.Losa de concreto aligerada</label>
+                        </div>
+                        <img src="/img/Losa.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="losaMacisa" puntos="1">
+                            <label for="losaMacisa">B.Losa de concreto maciza</label>
+                        </div>
+                        <img src="/img/losa_maciza.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="zinc" puntos="3">
+                            <label for="zinc">C.Zinc</label>
+                        </div>
+                        <img src="/img/zinc.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="plancha" puntos="1">
+                            <label for="plancha">D.Termina en plancha</label>
+                        </div>
+                        <img src="/img/Plancha.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="placa" puntos="2">
+                            <label for="placa">E.Placa fácil </label>
+                        </div>
+                        <img src="/img/PLACA.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="eternit" puntos="3">
+                            <label for="eternit">F.Eternit </label>
+                        </div>
+                        <img src="/img/eternit.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="tejas" puntos="1">
+                            <label for="tejas">G.Estructura de madera y tejas de barro. </label>
+                        </div>
+                        <img src="/img/tejas.jpg" width="230" height="130">
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="techo" id="metalica" puntos="3">
+                            <label for="metalica">H.Metálica </label>
+                        </div>
+                        <img src="/img/metalica.jpg" width="230" height="130">
                     </div>
-                    <img src="Ladera.jpg" width="230" height="130">
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Valle">
-                        <label for="Valle">C. Valle</label>
+                    <br>
+                    <div class="text-center fade-in">
+                        <div id="parteOcho" class="button">Siguiente</div>
                     </div>
-                    <img src="Valle.jpg" width="230" height="130">
-                    <div class="text-center fade-in boton">
-                        <div class="button">Siguiente</div>
-                    </div>
+                </form>
             </div>
-            </form>
             <div class="modal-body modal-body-step-9">
-                <div class="title">Uso de la vivienda</div>
-                <div class="description">El uso actual predominante de la vivienda es:</div>
                 <form>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Residencial">
-                        <label for="Residencial">A. Residencial</label>
+                    <div>
+                        <div class="title">Estado de daño de la edificación </div>
+                        <div class="description">La edificación presenta algun asentamiento(Hundimiento)</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="dañoHundimiento" id="si" puntos="4">
+                            <label for="si">A.Si</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="dañoHundimiento" id="no" puntos="0">
+                            <label for="no">B.No</label>
+                        </div>
+                        <div id="contenedorHundimiento" class="ocultarHijos">
+                            <div id="imagenesHundimiento"
+                                style="display: flex; justify-content: center; flex-wrap:wrap"></div>
+                            <div class="inputImage">
+                                <div>
+                                    <label for="inputImageHundimiento">Agregar Imagen</label>
+                                    <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Image-512.png" alt="">
+                                </div>
+                                <input id="inputImageHundimiento" accept="image/*" type="file">
+                            </div>
+                            <ol style="color:rgb(125, 122, 122);"> <p>Suba 2 imagenes asi:</p>
+                                <li>Lejana al hundimiento horizontal</li>
+                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o cuaderno al lado del hundimiento)</li>
+                            </ol>
+                        </div>
+                        <!-- (En caso que la respuesta sea si, debe de subir una imagen) -->
+                        <!-- (subir 2 imágenes) ____________
+                         1.	Lejana al hundimiento horizontal
+                         2.	Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o cuaderno al lado del hundimiento) -->
                     </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Comercial">
-                        <label for="Comercial">B. Comercial</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Educacional">
-                        <label for="Educacional">C. Educacional</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Oficinas">
-                        <label for="Oficinas">D. Oficinas</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Bodegas">
-                        <label for="Bodegas">E. Bodegas</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Instalación">
-                        <label for="Instalación">F. Instalación deportiva</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="salud">
-                        <label for="salud">G.Centro de salud</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Industrial">
-                        <label for="Industrial">H.Centro de salud</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="Hotelero">
-                        <label for="Hotelero">I.Hotelero</label>
-                    </div>
-                    <div class="contenedor_radio label">
-                        <input type="radio" name="radio" id="otro">
-                        <label for="otro">J.Otro</label>
+                    <br>
+                    <div>
+                        <div class="description">Se evidencias grietas pronunciadas en los muros y/o columnas.</div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="dañoGrietas" id="si" puntos="3">
+                            <label for="si">A.Si</label>
+                        </div>
+                        <div class="contenedor_radio label">
+                            <input type="radio" name="dañoGrietas" id="no" puntos="0">
+                            <label for="no">B.No</label>
+                        </div>
+                        <div id="contenedorGrietas" class="ocultarHijos">
+                            <div id="imagenesGrietas" style="display: flex; justify-content: center; flex-wrap:wrap">
+                            </div>
+                            <div class="inputImage">
+                                <div>
+                                    <label for="inputImageGrieta">Agregar Imagen</label>
+                                    <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Image-512.png" alt="">
+                                </div>
+                                <input id="inputImageGrieta" accept="image/*" type="file">
+                            </div>
+                            <ol  style="color:rgb(125, 122, 122);"> <p>Suba 2 imagenes asi:</p>
+                                <li>Lejana a la grieta</li>
+                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o cuaderno al lado de la grieta)</li>
+                            </ol>
+                        </div>
+                        
                     </div>
                     <div class="text-center fade-in">
-                        <div class="button">Siguiente</div>
+                        <div id="parteNueve" class="button">Enviar</div>
                     </div>
                 </form>
             </div>
+
         </div>
+
+
     </div>
+
     </div>
-    <div class="text-center">
-        <div class="rerun-button">ReRun</div>
-    </div>
+
+
+
+
+
+
+
+    <script src="./js/envioInformacion.js"></script>
     <script src="./index.js"></script>
     <script src="./components/infoMensaje.js"></script>
+    <script src="./js/grupoUno.js"></script>
+    <script src="./js/grupoDos.js"></script>
+    <script src="./js/grupoTres.js"></script>
+    <script src="./js/grupoCuatro.js"></script>
+    <script src="./js/grupoCinco.js"></script>
+    <script src="./js/grupoSeis.js"></script>
+    <script src="./js/grupoSiete.js"></script>
+    <script src="./js/grupoOcho.js"></script>
+    <script src="./js/grupoNueve.js"></script>
 </body>
 
 </html>
