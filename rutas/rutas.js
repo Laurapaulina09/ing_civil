@@ -176,7 +176,8 @@ let foto_OK=[4]
 var respuestaSubida=[4];
 let mensaje="";
 let codigo=400;
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < req.files.length; i++) {
+    console.log(i)
     foto_OK[i]=false;
     let column=columnaNom[i]
     arrayDatos[i]={
@@ -187,7 +188,7 @@ for (var i = 0; i < 4; i++) {
     }
 
     conectar.almacenarImagenEnViviendas(arrayDatos[i],(respuesta)=>{
-        if (respuesta.lenght>=1) {
+        if (respuesta.length>=1) {
             //Se ha cargado la foto actual.
             foto_OK[i]=true;
             respuestaSubida[i]={
@@ -204,15 +205,10 @@ for (var i = 0; i < 4; i++) {
         }
     })
 }
-if (foto_OK[0]&&foto_OK[1]&&foto_OK[2]&&foto_OK[3]){
+if (req.files.length == 0 || (foto_OK[0]&&foto_OK[1]&&foto_OK[2]&&foto_OK[3]) || (foto_OK[0]&&foto_OK[1]&&foto_OK[2]&&foto_OK[3])){
     codigo=200;
 }
-return res.status(codigo).send(
-    {
-     mensaje:  respuestaSubida.message ,
-     respuestabd:respuestaSubida.respuestaDb,
-     ruta: respuestaSubida.rutaImagen
-    })
+return res.send({mensaje:'Guardo'})
 })
 
 .post("/parte9B", (req, res) => {
