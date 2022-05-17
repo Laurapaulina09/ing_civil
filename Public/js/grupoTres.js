@@ -25,11 +25,14 @@ $("#parteTres").click(function () {
         */
         var formData = new FormData();
         formData.append("foto", imagen);
-        envioFile(url, formData, tercerGrupo).then(res => {
-            cambio($btn)
+        postSencilla('',tercerGrupo)
+        .then(response=>{
+            envioFile(url, formData).then(res => {
+                cambio($btn)
+            })
         })
     }else{
-        //$("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        //$("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
         cambio($btn)
     }
     //

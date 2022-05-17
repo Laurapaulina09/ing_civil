@@ -11,14 +11,16 @@ $("#parteSiete").click(function () {
     }
     if (d.alturaEntrePisos != null && d.materialDeConstruccion != null) {
         if ((d.materialDeConstruccion === 'B.Concreto' || d.materialDeConstruccion === 'Mamposteria' || d.materialDeConstruccion === 'Prefabricado') && d.tipoMamposteriaConcretoPrefabricado == null) {
-            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
         } else {
             if (d.tipoMamposteriaConcretoPrefabricado != null) {
                 d.tipoMamposteriaConcretoPrefabricadoPts = validarRadio('tipo_select').getAttribute('puntos')
             }
             d.alturaEntrePisosPts = validarRadio('alturaEntrePisos').getAttribute('puntos')
             d.materialDeConstruccionPts = validarRadio('descripcionVivienda').getAttribute('puntos')
-            console.log(d)
+            if(d.materialDeConstruccion === "otro"){
+                d.materialDeConstruccion = $("#otroDescripcionVivienda")[0].value
+            }
             postSencilla('', d)
                 .then(respuesta => {
                     cambio($btn)
@@ -26,7 +28,7 @@ $("#parteSiete").click(function () {
 
         }
     }else{
-        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
     }
 })
 

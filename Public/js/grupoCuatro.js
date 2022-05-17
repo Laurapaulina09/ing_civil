@@ -4,7 +4,6 @@ $("#parteCuatro").click(function () {
         elementosCercanosPts: null,
         usoActualPredominanteVivienda: null,
         usoActualPredominanteViviendaPts: null,
-        usoActualPredominanteViviendaOtro:$('#otroUsoVivienda')[0].value,
         usoAnteriorDiferente: null, //Respuesta si o no
         usoAnterior: null,
         usoPrimerPiso: null,
@@ -24,8 +23,11 @@ $("#parteCuatro").click(function () {
         d.usoActualPredominanteVivienda = d.usoActualPredominanteVivienda.getAttribute("id")
         d.usoAnteriorDiferente = d.usoAnteriorDiferente.getAttribute("id")
         d.usoPrimerPiso = d.usoPrimerPiso.getAttribute("id")
+        if(d.usoActualPredominanteVivienda === "otro"){
+            d.usoActualPredominanteVivienda=$('#otroUsoVivienda')[0].value
+        }
         if (d.usoAnteriorDiferente === "Si" && d.usoAnterior == null){
-            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
             return
         }
         d.usoAnterior = d.usoAnterior==null? null : d.usoAnterior.getAttribute("id")
@@ -35,7 +37,7 @@ $("#parteCuatro").click(function () {
             cambio($btn)
         })
     }else{
-        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
         //cambio($btn)
     }
 })

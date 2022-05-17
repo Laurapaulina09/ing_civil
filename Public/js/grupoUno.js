@@ -23,7 +23,7 @@ $("#parteUno").click(function () {
     let cc = new RegExp("^[1-9]{1}[0-9]{7,9}$")
 
     if(nombres.test(d.primerNombre) && nombres.test(d.segundoNombre) && nombres.test(d.primerApellido) && nombres.test(d.segundoApellido) && telefono.test(d.celular) && correo.test(d.email) && cc.test(d.cedula) && d.direccion.length >= 9 && d.departamento.length >= 1 && d.municipio.length >= 1 && d.barrio.length >= 4 && d.tratamientoDatos){
-        localStorage.setItem('cuedula', d.cedula)
+        localStorage.setItem('cedula', d.cedula)
         //cambio($btn)
         fetch('', {
             method:'POST',
@@ -39,7 +39,7 @@ $("#parteUno").click(function () {
             cambio($btn)
         })
     }else{
-        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
         //cambio($btn)
     }
 })

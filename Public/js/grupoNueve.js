@@ -72,7 +72,7 @@ $("#parteNueve").click(function(){
         d.danoGrietasPts=validarRadio('dañoGrietas').getAttribute('puntos')
         d.danoHundimientoPts=validarRadio('dañoHundimiento').getAttribute('puntos')
         if((d.danoGrietas =='si' && imagenesGrietas.length == 0) || (d.danoHundimiento=='si' && imagenesHundimiento.length==0 )){
-            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+            $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
         }else{
             var formData = new FormData();
             if(d.danoGrietas=='si'){
@@ -95,7 +95,7 @@ $("#parteNueve").click(function(){
             })
         }
     }else{
-        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
     }
     //cambio($btn)
 })

@@ -29,7 +29,7 @@
             <span></span>
         </div>
         <div class="modal-bodies">
-            <div class="modal-body modal-body-step-1 is-showing">
+            <div class="modal-body modal-body-step-1">
                 <div class="img_login"><img width="100px" src="./Logo.jpg" alt=""></div>
 
                 <div class="title">Encuesta</div>
@@ -187,7 +187,7 @@
                         <div>
                             <div class="contenedor_radio label cajaMensaje">
                                 <div id="ladera" class="mensajeOculto">
-                                    <b>Ladera</b> Pendiente de una montaña o elevación del terreno por cualquiera de sus
+                                     Pendiente de una montaña o elevación del terreno por cualquiera de sus
                                     lados.
                                 </div>
                                 <input type="radio" name="ubicacionVivienda" id="Ladera" puntos="2">
@@ -199,8 +199,8 @@
                         </div>
                         <div class="mt-2">
                             <div class="contenedor_radio label cajaMensaje">
-                                <div id="ladera" class="mensajeOculto">
-                                    <b>Valle</b> Es una depresión entre dos vertientes o montañas
+                                <div class="mensajeOculto">
+                                     Es una depresión entre dos vertientes o montañas
                                 </div>
                                 <input type="radio" name="ubicacionVivienda" id="Valle" puntos="1">
                                 <label for="Valle">B. Valle</label>
@@ -215,7 +215,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-4 ">
+            <div class="modal-body modal-body-step-4">
                 <form>
                     <div>
                         <div class="title">Elementos cercanos a la vivienda</div>
@@ -408,7 +408,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-5 ">
+            <div class="modal-body modal-body-step-5">
                 <form>
                     <div>
                         <div class="title mt-2">Número de pisos</div>
@@ -505,7 +505,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-6 ">
+            <div class="modal-body modal-body-step-6">
                 <form>
                     <div>
                         <div class="title">Posibilidad de golpeteo con edificaciones</div>
@@ -561,7 +561,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-7">
+            <div class="modal-body modal-body-step-7 is-showing">
                 <form>
                     <div>
                         <div class="title">Interior de la vivienda</div>
@@ -586,17 +586,26 @@
                     <div>
                         <div class="title">Descripcion de la vivienda </div>
                         <div class="description">Material de construcción.</div>
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="Mamposteria" class="mensajeOculto">
+                                construcción compuesta por ladrillos u otro material
+                            </div>
                             <input type="radio" name="descripcionVivienda" id="Mamposteria" puntos="2">
                             <label for="Mamposteria">A.Mamposteria</label>
                         </div>
                         <img src="Mamposteria.png" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="concreto" class="mensajeOculto">
+                                Construcción compuesta por concreto y acero
+                            </div>
                             <input type="radio" name="descripcionVivienda" id="B.Concreto" puntos="1">
                             <label for="Concreto">B.Concreto reforzado.</label>
                         </div>
                         <img src="concreto_reforzado.jpg" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="prefabricado" class="mensajeOculto">
+                                construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción
+                            </div>
                             <input type="radio" name="descripcionVivienda" id="Prefabricado" puntos="2">
                             <label for="Prefabricado">C.Prefabricado</label>
                         </div>
@@ -616,17 +625,22 @@
                             <label for="madera">F.Adobes</label>
                         </div>
                         <img src="adobes.png" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label ">
+                            </div>
                             <input type="radio" name="descripcionVivienda" id="tapia" puntos="3">
                             <label for="tapia">G.Tapia</label>
                         </div>
                         <img src="tapia.jpg" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="Tapia" class="mensajeOculto">
+                                consiste en elaborar muros con tierra arcillosa húmeda, compactada a golpes con un pisón rellenando un encofrado con diferentes capas.
+                            </div>
                             <input type="radio" name="descripcionVivienda" id="guadua" puntos="3">
                             <label for="guadua">H.guadua</label>
                         </div>
                         <img src="guadua.jpg" width="230" height="130">
                         <div class="contenedor_radio label">
+                            
                             <input type="radio" name="descripcionVivienda" id="otro" puntos="0">
                             <label for="otro">I.Otro</label>
                             <input class="otroInput" placeholder="¿Cuál?" id="otroDescripcionVivienda" type="text">
@@ -637,17 +651,26 @@
                         <!-- si escogio mamposteria -->
                         <div id="mamposteria" class="ocultarHijos">
                             <div class="description">Tipo de mamposteria</div>
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="reforzada" class="mensajeOculto">
+                                    contiene acero al interior de la estructura
+                                </div>
                                 <input type="radio" name="tipo_select" id="Reforzada" puntos="1">
                                 <label for="Reforzada">A.Reforzada</label>
                             </div>
                             <img src="/img/mamp_reforzada.gif" width="230" height="130">
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="noReforzada" class="mensajeOculto">
+                                    No contiene hierro al interior de la estructura, solo sería el adobe
+                                </div>
                                 <input type="radio" name="tipo_select" id="noReforzada" puntos="1">
                                 <label for="noReforzada">B.No reforzada</label>
                             </div>
                             <img src="/img/mamp_noreforz.jpg" width="230" height="130">
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="Confinada" class="mensajeOculto">
+                                    Muro el cual está encerrado alrededor por vigas y columnas
+                                </div>
                                 <input type="radio" name="tipo_select" id="Confinada" puntos="1">
                                 <label for="Confinada">C.Confinada</label>
                             </div>
@@ -656,22 +679,35 @@
                         <!-- si escogio concreto reforzado -->
                         <div id="concreto" class="ocultarHijos">
                             <div class="description">Concreto reforzado</div>
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="Muro" class="mensajeOculto">
+                                    muro el cual no se puede quitar ni modificar, ya que son muros que soportan la carga de la vivienda
+                                </div>
                                 <input type="radio" name="tipo_select" id="Muro" puntos="1">
                                 <label for="Muro">A.Muro estructural</label>
                             </div>
                             <img src="/img/muro_estructural.JPG" width="230" height="130">
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="portico" class="mensajeOculto">
+                                    <div class="contenedor_radio label cajaMensaje">
+                                        Estructura formada por pilares y vigas que soporta las cargas de forjados.
+                                </div>
                                 <input type="radio" name="tipo_select" id="portico" puntos="1">
                                 <label for="portico">B.Pórtico</label>
                             </div>
                             <img src="img/portico.jpg" width="230" height="130">
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="dual" class="mensajeOculto">
+                                    muros estructurales y pórticos (compuestos por vigas y columnas)
+                                </div>
                                 <input type="radio" name="tipo_select" id="dualComb" puntos="1">
                                 <label for="dualComb">C.Sistema Dual o combinado</label>
                             </div>
                             <img src="/img/dual_combinado.png" width="230" height="130">
-                            <div class="contenedor_radio label">
+                            <div class="contenedor_radio label cajaMensaje">
+                                <div id="pref" class="mensajeOculto">
+                                    construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción
+                                </div>
                                 <input type="radio" name="tipo_select" id="pref" puntos="2">
                                 <label for="pref">D.Prefabricado</label>
                             </div>
@@ -718,17 +754,23 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-8 ">
+            <div class="modal-body modal-body-step-8 is-showing">
                 <form>
                     <div>
                         <div class="title">Tipo de entrepiso </div>
                         <div class="description">Como se encuentra construido el piso de la vivienda</div>
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="losa" class="mensajeOculto">
+                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo.
+                            </div>
                             <input type="radio" name="entrepiso" id="losa" puntos="1">
                             <label for="losa">A.Losa de concreto aligerado</label>
                         </div>
                         <img src="/img/Losa.jpg" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="maciso" class="mensajeOculto">
+                                conformada por concreto y acero
+                            </div>
                             <input type="radio" name="entrepiso" id="losaMacisa" puntos="1">
                             <label for="losa_macisa">B.Losa de concreto maciza</label>
                         </div>
@@ -747,12 +789,18 @@
                     <br>
                     <div>
                         <div class="title">Tipo de techo o cubierta</div>
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="losa" class="mensajeOculto">
+                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo.
+                            </div>
                             <input type="radio" name="techo" id="losaConcreto" puntos="1">
                             <label for="losaConcreto">A.Losa de concreto aligerada</label>
                         </div>
                         <img src="/img/Losa.jpg" width="230" height="130">
-                        <div class="contenedor_radio label">
+                        <div class="contenedor_radio label cajaMensaje">
+                            <div id="losa" class="mensajeOculto">
+                                conformada por concreto y acero
+                            </div>
                             <input type="radio" name="techo" id="losaMacisa" puntos="1">
                             <label for="losaMacisa">B.Losa de concreto maciza</label>
                         </div>
@@ -866,7 +914,7 @@
 
     </div>
 
-    </div>
+   
 
 
 

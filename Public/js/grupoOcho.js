@@ -15,7 +15,7 @@ $("#parteOcho").click(function () {
                 cambio($btn)
             })
     } else {
-        $("#mensaje")[0].innerHTML = `<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hallas llenado todos los campos"></info-mensaje>`
+        $("#mensaje")[0].innerHTML = `<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
     }
     //cambio($btn)
 })

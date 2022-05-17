@@ -13,7 +13,7 @@ class InfoMensaje extends HTMLElement{
             case 'warning':
                 return '<i class="bi bi-exclamation-octagon-fill text-warning"></i>'
             case 'error':
-                return '<i class="bi bi-exclamation-octagon-fill text-danger"></i>'
+                return '<img width="70px" src="../img/advertencia.png">'
         }
     }
     get message(){
@@ -95,14 +95,32 @@ class InfoMensaje extends HTMLElement{
         .icon-info i {
             font-size: 48px;
         }
+        .btn-cerrar{
+            position:absolute;
+            roght:5px;
+            top:5px;
+            background-color:red
+        }
+        .header{
+            position:relative
+        }
+        .button-alert{
+            padding: 10px;
+            margin: 5px;
+            background-color: red;
+            cursor: pointer;
+        }
     </style>
     <div class="superior">
         <div class="mensaje shadow">
-            <div class="header position-relative">
+            <div style="position: relative;" class="header position-relative">
                 <div class="icon-info">
                     ${this.typeMessage}
                 </div>
-                <div class="close position-absolute top-0 end-0" id="btn-close">
+                <div style="position: absolute;
+                right: 5px;
+                top: 5px;
+                width: 35px;" class="close position-absolute top-0 end-0" id="btn-close">
                     <i class="bi bi-x"></i>
                 </div>
             </div>
@@ -114,8 +132,10 @@ class InfoMensaje extends HTMLElement{
             <div class="footer">
                 <div class="d-flex justify-content-end">
                     ${this.link}
-                    <div class="m-2">
-                        <button type="button" id="btn-aceptar" class="btn btn-primary px-2 py-1">Aceptar</button>
+                    <div class="m-2" style="display:flex; justify-content:center">
+                        <div class="button button-alert"  type="button" id="btn-aceptar" >
+                            Aceptar
+                        </div>
                     </div>
                 </div>
             </div>
