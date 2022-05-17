@@ -168,6 +168,72 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
  }
 
 
+ Conexion.getPuntosTablaEncuesta = (datos, cb) => {
+    let sql = `SELECT  añoConstruccionPuntos,construidaPorEntidadPuntos 
+    FROM Encuesta
+    WHERE encuestadoCedula="${datos.cedula}"`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
+
+ Conexion.getPuntosTablaEncuestaViviendaExterior = (datos, cb) => {
+    let sql = `SELECT  ubicacionPuntos,elementosCercanosPuntos, 
+    usoActualPuntos,usoPrimerPisoPuntos,
+    totalPisosPuntos,seUbicaEnElPisoPuntos,
+    seUbicaEnElPisoPuntos,numSotanosPuntos,
+    comparteMurosConVecinosPuntos,equiposDentroDeLaEdificacionPuntos
+    FROM EncuestaViviendaExterior 
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
+ Conexion.getPuntosTablaEncuestaViviendaInterior = (datos, cb) => {
+    let sql = `SELECT  alturaEntrePisosPuntos,materialDeConstruccionPuntos, 
+    tipoMamposteriaConcretoPrefabricadoPuntos,tipoEntrePisoPuntos,
+    tipoEntrePisoPuntos,tipoTechoPuntos,
+    estadoEdificacionPuntos,tieneGrietasPuntos,
+    FROM EncuestaViviendaInterior 
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
+
+ Conexion.almacenarResultadosEncuesta = (datos, cb) => {
+    let sql = `UPDATE  Encuesta
+    SET puntaje= "${datos.puntaje}",
+    escalaGravedad ="${datos.escalaGravedad}",
+    WHERE encuestadoCedula="${datos.cedula}"`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
 Conexion.ListarTodosEncuestados = (datos, cb) => {
     let sql = `SELECT *FROM  usuario`;
     conectar.query(sql, function (err, res) {

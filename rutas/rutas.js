@@ -215,6 +215,61 @@ return res.status(codigo).send(
 })
  */ 
 
+ /*
+
+  `alturaEntrePisosPuntos` INT(2) NULL,
+  `materialDeConstruccionPuntos` INT(2) NULL,
+  `tipoMamposteriaConcretoPrefabricadoPuntos` INT(2) NULL,
+  `tipoEntrePisoPuntos` INT(2) NULL,
+  `tipoTechoPuntos` INT(2) NULL,
+  `estadoEdificacionPuntos` INT(2) NULL,
+  `tieneGrietasPuntos` INT(2) NULL,
+*/
+.post("/gravedadVivienda:/cedula", (req, res) => {
+    datos={
+        cedula: req.params.cedula
+    }
+    let pcedula=datos.cedula;
+    var ptsTblEncuesta=0;
+    var ptsTblViviendaExterior=0;
+    var ptsTblViviendaInterior=0;
+    var ptsPuntaje=0;
+    var ptsEscalaGravedad=0;
+    var max_puntos=60;
+    conectar.getPuntosTablaEncuesta(datos, resultado => {
+        ptsTblEncuesta= resultado.añoConstruccionPuntos+resultado.construidaPorEntidadPuntos  
+    })
+    conectar.getPuntosTablaEncuestaViviendaExterior(datos, resultado => {
+        ptsTblViviendaExterior= resultado.ubicacionPuntos+
+        resultado.materialDeConstruccionPuntos+
+        resultado.tipoMamposteriaConcretoPrefabricadoPuntos+
+        resultado.tipoEntrePisoPuntos+resultado.tipoTechoPuntos+
+        resultado.estadoEdificacionPuntos+resultado.tieneGrietasPuntos
+    })
+
+    conectar.getPuntosTablaEncuestaViviendaInterior(datos, resultado => {
+        ptsTblViviendaInterior= resultado.alturaEntrePisosPuntos+
+        resultado.usoActualPuntos+resultado.totalPisosPuntos+
+        resultado.seUbicaEnElPisoPuntos+resultado.comparteMurosConVecinosPuntos+
+        resultado.equiposDentroDeLaEdificacionPuntos
+    })
+    ptsPuntaje=ptsTblEncuesta+ptsTblViviendaExterior+ptsTblViviendaInterior
+    ptsEscalaGravedad=(ptsPuntaje*100)/max_puntos
+    let encuestaResuladosCalculados={
+        puntaje:ptsPuntaje,
+        escalaGravedad:ptsEscalaGravedad,
+        cedula:pcedula
+    }
+    conectar.almacenarResultadosEncuesta(encuestaResuladosCalculados, calculo => {
+        res.status(200).send({
+            menssage:"Se ha calculado el porcentaje de gravedad",
+            respuestadb:calculo
+             });
+    })
+
+
+})
+
 .get("/Admin",(req,res) =>{
     let parametros=req.body;
     datos=parametros.contrasena

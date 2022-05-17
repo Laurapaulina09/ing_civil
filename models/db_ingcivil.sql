@@ -140,7 +140,6 @@ CREATE TABLE IF NOT EXISTS `db_ingcivil`.`EncuestaViviendaInterior` (
   `materialDeConstruccion` VARCHAR(45) NULL,
   `materialDeConstruccionPuntos` INT(2) NULL,
   `tipoMamposteriaConcretoPrefabricado` VARCHAR(45) NULL,
-  `EncuestaViviendaInteriorcol` VARCHAR(45) NULL,
   `tipoMamposteriaConcretoPrefabricadoPuntos` INT(2) NULL,
   `tipoEntrePiso` VARCHAR(45) NULL,
   `tipoEntrePisoPuntos` INT(2) NULL,
