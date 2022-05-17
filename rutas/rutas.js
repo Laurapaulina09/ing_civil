@@ -63,12 +63,11 @@ rutas
     })
 })
 
-//Falta Probar, no tengo como hacerlo en este momento
-.put('/p3BsubirImagenFrente/:cedula', multer.single('foto'), (req, res) => {
+.put('/p3BsubirImagenFrente', multer.single('foto'), (req, res) => {
     console.log('Se ha cargado la foto')
     let datos={
         imagenFrente:`\\\\img\\\\${req.file.filename}`,
-        cedula:req.params.cedula,
+        cedula:req.body.cedula,
         nombreTabla:'EncuestaViviendaExterior',
         columna:'imagenFrente',
     }
@@ -133,14 +132,98 @@ rutas
     })
 })
 
+//Falta Probar
+.post("/parte7", (req, res) => {
+    let  parametros=req.body;
+    var datos = {
+        alturaEntrePisos: parametros.alturaEntrePisos,
+        alturaEntrePisosPts: parametros.alturaEntrePisosPts,
+        materialDeConstruccion: parametros.materialDeConstruccion,
+        materialDeConstruccionPts: parametros.materialDeConstruccionPts,
+        tipoMamposteriaConcretoPrefabricado: parametros.tipoMamposteriaConcretoPrefabricado,
+        tipoMamposteriaConcretoPrefabricadoPts: parametros.tipoMamposteriaConcretoPrefabricadoPts,
+        cedula:parametros.cedula
+    }
+    conectar.almacenarEncuestaP7(datos, () => {
+        res.status(200).send({
+            menssage:"Se ha añadido la Parte 7"
+             });
+    })
+})
+.post("/parte8", (req, res) => {
+    let  parametros=req.body;
+    var datos = {
+        tipoEntrePiso: parametros.tipoEntrePiso,
+        tipoEntrePisoPts: parametros.tipoEntrePisoPts,
+        tipoTecho: parametros.tipoTecho,
+        tipoTechoPts: parametros.tipoTechoPts,
+        cedula:parametros.cedula
+    }
+    conectar.almacenarEncuestaP8(datos, () => {
+        res.status(200).send({
+            menssage:"Se ha añadido la Parte 8"
+             });
+    })
+})
+/* 
+.put('/p3BsubirImagenesGrietaYHundimiento', multer.array('foto',4), (req, res) => {
+let  arrayDatos=[4];
+let nomTabla='EncuestaViviendaInterior';
+let columnaNom=[4]=["estadoEdifacionImgLejana", "estadoEdifacionImgCercanaAObjeto", "tieneGrietasImgLejana",
+"EncuestaViviendaImgCercanaAObjeto"]
+let foto_OK=[4]
+var respuestaSubida=[4];
+let mensaje="";
+let codigo=400;
+for (var i = 0; i < 4; i++) {
+    foto_OK[i]=false;
+    let column=columnaNom[i]
+    arrayDatos[i]={
+        ruta:`\\\\img\\\\${req.file.filename}`,
+        cedula:req.body.cedula,
+        nombreTabla:nomTabla,
+        columna:column
+    }
 
-        
+    conectar.almacenarImagenEnViviendas(datos[i],(respuesta)=>{
+        if (respuesta.lenght>=1) {
+            //Se ha cargado la foto actual.
+            foto_OK[i]=true;
+            respuestaSubida[i]={
+            respuestaDb:respuestaSubida,
+            rutaImagen:arrayDatos[i].ruta[i],
+            message:'Se ha subido la imagen en la bd'
+            };
+        }
+        else{
+            respuestaSubida[i]=
+            {
+                message:'No Se subio  la imagen en la bd'
+            }
+        }
+    })
+}
+if (foto_OK[0]&&foto_OK[1]&&foto_OK[2]&&foto_OK[3]){
+    codigo=200;
+}
+return res.status(codigo).send(
+    {
+     mensaje:  respuestaSubida.message ,
+     respuestabd:respuestaSubida.respuestaDb,
+     ruta: respuestaSubida.rutaImagen
+    })
+})
+ */ 
+
 .get("/Admin",(req,res) =>{
     let parametros=req.body;
     datos=parametros.contrasena
     conectar.BuscarAdministrador(datos)
 }
 )
+
+
+
 
 
 

@@ -127,6 +127,47 @@ Conexion.almacenarEncuestaP6 = (datos, cb) => {
         }
     })
 }
+Conexion.almacenarEncuestaP7 = (datos, cb) => {
+    let sql = `INSERT INTO EncuestaViviendaInterior (alturaEntrePisos,
+        alturaEntrePisosPuntos,materialDeConstruccion,
+        materialDeConstruccionPuntos,
+        tipoMamposteriaConcretoPrefabricado,
+        tipoMamposteriaConcretoPrefabricadoPuntos,
+        Encuesta_id) 
+         VALUES  ("${datos.alturaEntrePisos}",
+         "${datos.alturaEntrePisosPts}",
+     "${datos.materialDeConstruccion}",
+     "${datos.materialDeConstruccionPts}",
+     "${datos.tipoMamposteriaConcretoPrefabricado}",
+     "${datos.tipoMamposteriaConcretoPrefabricadoPts}",
+     (select id from Encuesta where encuestadoCedula="${datos.cedula}"))`
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
+ Conexion.almacenarEncuestaP8 = (datos, cb) => {
+    let sql = `UPDATE  EncuestaViviendaInterior 
+    SET tipoEntrePiso= "${datos.tipoEntrePiso}",
+    tipoEntrePisoPuntos ="${datos.tipoEntrePisoPts}",
+    tipoTecho="${datos.tipoTecho}",
+    tipoTechoPuntos="${datos.tipoTechoPts}"
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
+
+
 Conexion.ListarTodosEncuestados = (datos, cb) => {
     let sql = `SELECT *FROM  usuario`;
     conectar.query(sql, function (err, res) {

@@ -87,6 +87,8 @@ CREATE TABLE IF NOT EXISTS `db_ingcivil`.`Encuesta` (
   `construidaPorEntidadPuntos` INT(2) NULL,
   `nombreConstructora` VARCHAR(45) NULL,
   `encuestadoCedula` VARCHAR(20) NOT NULL,
+   `puntaje` int  NULL,
+    `escalaGravedad` float  NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_Encuesta_encuestado1`
     FOREIGN KEY (`encuestadoCedula`)
