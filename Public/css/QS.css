@@ -1,0 +1,36 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../img/fondo.jpg");
+}
+.quienes{
+    background-image: url("../img/gris.png");
+    background-repeat: no-repeat;
+    width: 100%;
+   padding: 10px;
+   background-position: center;
+   text-align: center;
+}
+.quienes p{
+    width: 300px;
+    margin: 10px auto;
+}
+.mision{
+    background-image: url("../img/mancha-azul-acuarela.png");
+    background-repeat: no-repeat;
+    width: 500px;;
+    height: 400px;
+    background-size: contain;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.mision p{
+    width: 300px;
+    text-align: center;
+}
+.mision h3{
+    width: 300px;
+    text-align: center;
+}

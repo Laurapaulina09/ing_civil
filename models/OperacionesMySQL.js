@@ -209,7 +209,7 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
      })
  }
 
- Conexion.getPuntosTablaEncuestaViviendaExterior = (datos, cb) => {
+/*  Conexion.getPuntosTablaEncuestaViviendaExterior = (datos, cb) => {
     let sql = `SELECT  ubicacionPuntos,elementosCercanosPuntos, 
     usoActualPuntos,usoPrimerPisoPuntos,
     totalPisosPuntos,seUbicaEnElPisoPuntos,
@@ -226,8 +226,8 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
              cb()
          }
      })
- }
- Conexion.getPuntosTablaEncuestaViviendaInterior = (datos, cb) => {
+ } */
+/*  Conexion.getPuntosTablaEncuestaViviendaInterior = (datos, cb) => {
     let sql = `SELECT  alturaEntrePisosPuntos,materialDeConstruccionPuntos, 
     tipoMamposteriaConcretoPrefabricadoPuntos,tipoEntrePisoPuntos,
     tipoEntrePisoPuntos,tipoTechoPuntos,
@@ -244,8 +244,8 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
          }
      })
  }
-
- Conexion.almacenarResultadosEncuesta = (datos, cb) => {
+ */
+/*  Conexion.almacenarResultadosEncuesta = (datos, cb) => {
     let sql = `UPDATE  Encuesta
     SET puntaje= "${datos.puntaje}",
     escalaGravedad ="${datos.escalaGravedad}",
@@ -259,7 +259,66 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
              cb()
          }
      })
+ } */
+
+ Conexion.getPuntosTablaEncuesta = (datos, cb) => {
+    let sql = `SELECT  (añoConstruccionPuntos+construidaPorEntidadPuntos) as SUMA
+    FROM Encuesta
+    WHERE encuestadoCedula="${datos.cedula}"`;
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb(res)
+         }
+     })
  }
+ Conexion.getPuntosTablaEncuestaViviendaExterior = (datos, cb) => {
+    let sql = `SELECT  (ubicacionPuntos+elementosCercanosPuntos+ 
+    usoActualPuntos+usoPrimerPisoPuntos+
+    totalPisosPuntos+seUbicaEnElPisoPuntos+
+    seUbicaEnElPisoPuntos+numSotanosPuntos+
+    comparteMurosConVecinosPuntos+equiposDentroDeLaEdificacionPuntos) as SUMA
+    FROM EncuestaViviendaExterior 
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb(res)
+         }
+     })
+ }
+ Conexion.getPuntosTablaEncuestaViviendaInterior = (datos, cb) => {
+    let sql = `SELECT  (alturaEntrePisosPuntos+materialDeConstruccionPuntos+ 
+    tipoMamposteriaConcretoPrefabricadoPuntos+tipoEntrePisoPuntos+
+    tipoEntrePisoPuntos+tipoTechoPuntos+
+    estadoEdificacionPuntos+tieneGrietasPuntos) as SUMA
+    FROM EncuestaViviendaInterior 
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb(res)
+         }
+     })
+ }
+
+ Conexion.almacenarResultadosEncuesta = (datos, cb) => {
+    let sql = `UPDATE  Encuesta
+    SET puntaje= ${datos.puntaje},
+    escalaGravedad =${datos.escalaGravedad}
+    WHERE encuestadoCedula="${datos.cedula}"`;
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb(res)
+         }
+     })
+ }
+
 Conexion.ListarTodosEncuestados = (datos, cb) => {
     let sql = `SELECT *FROM  usuario`;
     conectar.query(sql, function (err, res) {
@@ -291,6 +350,35 @@ Conexion.BuscarAdministrador = (datos, cb) => {
             console.log(err)
         } else {
             cb()
+        }
+    })
+}
+Conexion.getUser=(email, contrasena, cb)=>{
+    let sql = `SELECT b.* FROM usuario a INNER JOIN administrador b on a.cedula=b.cedula
+    WHERE a.correo="${email}" and b.contrasena = "${contrasena}"`
+    conectar.query(sql, function (err, respuesta) {
+        if (err) {
+            console.log(err)
+        } else {
+            cb(respuesta)
+        }
+    })
+}
+Conexion.getEncuestados=(cb)=>{
+    let sql = `select a.cedula, CONCAT(a.primerNombre,' ',a.segundoNombre,' ',a.primerApellido,' ',a.segundoApellido) AS nombre, b.puntaje, concat(b.escalaGravedad, '%') as porcentaje, 
+    case  
+    when b.escalaGravedad< 30 then 'Bajo' 
+    when b.escalaGravedad< 60 then 'Medio'
+    when b.escalaGravedad< 80 then 'Alto'
+    else 'Extremo'
+    end
+    as Nivel
+    from usuario a inner join encuesta b on a.cedula=b.encuestadoCedula`
+    conectar.query(sql, function (err, respuesta) {
+        if (err) {
+            console.log(err)
+        } else {
+            cb(respuesta)
         }
     })
 }

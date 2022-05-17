@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+
+    <!--Fondo dinamico-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <form id="form" class="formulario" action="/iniciarSesion" method="post">
+
+        <h1>Iniciar sesión</h1>
+        <div class="contenedor">
+
+            <div class="input-contenedor-one">
+                <div>
+                    <i class="fas fa-envelope icon"></i>
+                </div>
+
+                <input type="email" id="email" name="email" autocomplete="off" required placeholder="Correo electrónico">
+
+            </div>
+            <div id="alerta"></div>
+            <div class="input-contenedor-one">
+                <div>
+                    <i class="fas fa-key icon"></i>
+                </div>
+                <input type="password" id="password" name="passowrd" autocomplete="off" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required placeholder="Contraseña">
+
+            </div>
+            <input type="submit" value="Iniciar sesión" class="button">
+        </div>
+    </form>
+</body>
+
+</html>

@@ -101,6 +101,7 @@ $("#parteNueve").click(function(){
                 postSencilla('/parte9B', d)
                 .then(resp=>{
                     cambio($btn)
+                    buscarPuntaje()
                 })
             })
         }
@@ -109,3 +110,41 @@ $("#parteNueve").click(function(){
     }
     //cambio($btn)
 })
+
+function buscarPuntaje(){
+    fetch('/gravedadVivienda/'+localStorage.getItem('cedula'), {
+        method:'POST'
+    })
+    .then(response=>{
+        return response.json()
+    })
+    .then(respuesta=>{
+        console.log(respuesta)
+        $('#resultado')[0].innerHTML=respuesta.respuestadb.puntaje
+        $('#porcentaje')[0].innerHTML=Math.round(respuesta.respuestadb.escalaGravedad)+'%'
+        //border: FA0B0B#F57F17;
+        //color: #F57F17;
+        if(respuesta.respuestadb.escalaGravedad <=30){
+            //baja
+            $('#gravedad')[0].innerHTML='baja'
+            $('#resultado')[0].style.color='#6AF544'
+            $('#resultado')[0].style.border='4px solid #6AF544'
+
+        }else if(respuesta.respuestadb.escalaGravedad <=60){
+            //media
+            $('#gravedad')[0].innerHTML='media'
+            $('#resultado')[0].style.color='#FEF60A'
+            $('#resultado')[0].style.border='4px solid #FEF60A'
+        }else if(respuesta.respuestadb.escalaGravedad <=80){
+            //alta
+            $('#gravedad')[0].innerHTML='alta'
+            $('#resultado')[0].style.color='#FA7B0B'
+            $('#resultado')[0].style.border='4px solid #FA7B0B'
+        }else{
+            //extrema
+            $('#gravedad')[0].innerHTML='extrema'
+            $('#resultado')[0].style.color='#FA0B0B'
+            $('#resultado')[0].style.border='4px solid #FA0B0B'
+        }
+    })
+}

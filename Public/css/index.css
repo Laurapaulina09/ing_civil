@@ -1,0 +1,8 @@
+.margen{
+    margin-left: 20px;
+}
+.medida-imagen{
+    width: 100% !important;
+    height: 80% !important;
+    object-fit: cover !important;
+}
