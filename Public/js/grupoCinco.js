@@ -17,7 +17,7 @@ $("#parteCinco").click(function(){
         d.numPisos=d.numPisos.getAttribute("id")
         d.ubicacionPiso=d.ubicacionPiso.getAttribute("id")
         d.parqueadero=d.parqueadero.getAttribute("id")
-        postSencilla('', d)
+        postSencilla('/parte5', d)
         .then(respuesta=>{
             cambio($btn)
         })

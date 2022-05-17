@@ -15,7 +15,7 @@ $("#parteSeis").click(function(){
         if(d.equiposGrandes === "Otro"){
             d.equiposGrandes=$('#otroEquipoGrande')[0].value
         }
-        postSencilla('', d)
+        postSencilla('/parte6', d)
         .then(respuesta=>{
             cambio($btn)
         })

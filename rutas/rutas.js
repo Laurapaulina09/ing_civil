@@ -63,11 +63,11 @@ rutas
     })
 })
 
-.put('/p3BsubirImagenFrente', multer.single('foto'), (req, res) => {
+.post('/p3BsubirImagenFrente/:cedula', multer.single('foto'), (req, res) => {
     console.log('Se ha cargado la foto')
     let datos={
         ruta:`\\\\img\\\\${req.file.filename}`,
-        cedula:req.body.cedula,
+        cedula:req.params.cedula,
         nombreTabla:'EncuestaViviendaExterior',
         columna:'imagenFrente',
     }
@@ -99,7 +99,7 @@ rutas
              });
     })
 })
-.post("/parte5", (req, res) => {
+.post("/parte6", (req, res) => {
     let  parametros=req.body;
     var datos = {
         comparteMuro: parametros.comparteMuro,
@@ -108,13 +108,13 @@ rutas
         equiposGrandesPts: parametros.equiposGrandesPts,
         cedula:parametros.cedula
     }
-    conectar.almacenarEncuestaP5(datos, () => {
+    conectar.almacenarEncuestaP6(datos, () => {
         res.status(200).send({
-            menssage:"Se ha añadido la Parte 5"
+            menssage:"Se ha añadido la Parte 6"
              });
     })
 })
-.post("/parte6", (req, res) => {
+.post("/parte5", (req, res) => {
     let  parametros=req.body;
     var datos = {
         numPisos: parametros.numPisos,
@@ -125,9 +125,9 @@ rutas
         parqueaderoPts: parametros.parqueaderoPts,
         cedula:parametros.cedula
     }
-    conectar.almacenarEncuestaP6(datos, () => {
+    conectar.almacenarEncuestaP5(datos, () => {
         res.status(200).send({
-            menssage:"Se ha añadido la Parte 6"
+            menssage:"Se ha añadido la Parte 5"
              });
     })
 })
@@ -167,7 +167,7 @@ rutas
 })
 
 
-.put('/parte9A/:cedula', multer.array('foto',4), (req, res) => {
+.post('/parte9A/:cedula', multer.array('foto',4), (req, res) => {
 let  arrayDatos=[4];
 let nomTabla='EncuestaViviendaInterior';
 let columnaNom=["estadoEdifacionImgLejana", "estadoEdifacionImgCercanaAObjeto", "tieneGrietasImgLejana",

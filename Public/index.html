@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./departamentos.js"></script>
     <script src="./municipios.js"></script>
 </head>
@@ -187,7 +187,7 @@
                         <div>
                             <div class="contenedor_radio label cajaMensaje">
                                 <div id="ladera" class="mensajeOculto">
-                                     Pendiente de una montaña o elevación del terreno por cualquiera de sus
+                                    Pendiente de una montaña o elevación del terreno por cualquiera de sus
                                     lados.
                                 </div>
                                 <input type="radio" name="ubicacionVivienda" id="Ladera" puntos="2">
@@ -200,7 +200,7 @@
                         <div class="mt-2">
                             <div class="contenedor_radio label cajaMensaje">
                                 <div class="mensajeOculto">
-                                     Es una depresión entre dos vertientes o montañas
+                                    Es una depresión entre dos vertientes o montañas
                                 </div>
                                 <input type="radio" name="ubicacionVivienda" id="Valle" puntos="1">
                                 <label for="Valle">B. Valle</label>
@@ -561,7 +561,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-7 is-showing">
+            <div class="modal-body modal-body-step-7">
                 <form>
                     <div>
                         <div class="title">Interior de la vivienda</div>
@@ -595,7 +595,7 @@
                         </div>
                         <img src="Mamposteria.png" width="230" height="130">
                         <div class="contenedor_radio label cajaMensaje">
-                            <div id="concreto" class="mensajeOculto">
+                            <div class="mensajeOculto">
                                 Construcción compuesta por concreto y acero
                             </div>
                             <input type="radio" name="descripcionVivienda" id="B.Concreto" puntos="1">
@@ -603,8 +603,9 @@
                         </div>
                         <img src="concreto_reforzado.jpg" width="230" height="130">
                         <div class="contenedor_radio label cajaMensaje">
-                            <div id="prefabricado" class="mensajeOculto">
-                                construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción
+                            <div class="mensajeOculto">
+                                construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la
+                                construcción
                             </div>
                             <input type="radio" name="descripcionVivienda" id="Prefabricado" puntos="2">
                             <label for="Prefabricado">C.Prefabricado</label>
@@ -626,21 +627,22 @@
                         </div>
                         <img src="adobes.png" width="230" height="130">
                         <div class="contenedor_radio label ">
-                            </div>
+
                             <input type="radio" name="descripcionVivienda" id="tapia" puntos="3">
                             <label for="tapia">G.Tapia</label>
                         </div>
                         <img src="tapia.jpg" width="230" height="130">
                         <div class="contenedor_radio label cajaMensaje">
                             <div id="Tapia" class="mensajeOculto">
-                                consiste en elaborar muros con tierra arcillosa húmeda, compactada a golpes con un pisón rellenando un encofrado con diferentes capas.
+                                consiste en elaborar muros con tierra arcillosa húmeda, compactada a golpes con un pisón
+                                rellenando un encofrado con diferentes capas.
                             </div>
                             <input type="radio" name="descripcionVivienda" id="guadua" puntos="3">
                             <label for="guadua">H.guadua</label>
                         </div>
                         <img src="guadua.jpg" width="230" height="130">
                         <div class="contenedor_radio label">
-                            
+
                             <input type="radio" name="descripcionVivienda" id="otro" puntos="0">
                             <label for="otro">I.Otro</label>
                             <input class="otroInput" placeholder="¿Cuál?" id="otroDescripcionVivienda" type="text">
@@ -680,24 +682,24 @@
                         <div id="concreto" class="ocultarHijos">
                             <div class="description">Concreto reforzado</div>
                             <div class="contenedor_radio label cajaMensaje">
-                                <div id="Muro" class="mensajeOculto">
-                                    muro el cual no se puede quitar ni modificar, ya que son muros que soportan la carga de la vivienda
+                                <div class="mensajeOculto">
+                                    muro el cual no se puede quitar ni modificar, ya que son muros que soportan la carga
+                                    de la vivienda
                                 </div>
                                 <input type="radio" name="tipo_select" id="Muro" puntos="1">
                                 <label for="Muro">A.Muro estructural</label>
                             </div>
                             <img src="/img/muro_estructural.JPG" width="230" height="130">
                             <div class="contenedor_radio label cajaMensaje">
-                                <div id="portico" class="mensajeOculto">
-                                    <div class="contenedor_radio label cajaMensaje">
-                                        Estructura formada por pilares y vigas que soporta las cargas de forjados.
+                                <div class="mensajeOculto">
+                                    Estructura formada por pilares y vigas que soporta las cargas de forjados.
                                 </div>
                                 <input type="radio" name="tipo_select" id="portico" puntos="1">
                                 <label for="portico">B.Pórtico</label>
                             </div>
                             <img src="img/portico.jpg" width="230" height="130">
                             <div class="contenedor_radio label cajaMensaje">
-                                <div id="dual" class="mensajeOculto">
+                                <div class="mensajeOculto">
                                     muros estructurales y pórticos (compuestos por vigas y columnas)
                                 </div>
                                 <input type="radio" name="tipo_select" id="dualComb" puntos="1">
@@ -706,7 +708,8 @@
                             <img src="/img/dual_combinado.png" width="230" height="130">
                             <div class="contenedor_radio label cajaMensaje">
                                 <div id="pref" class="mensajeOculto">
-                                    construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción
+                                    construcción por secciones o módulos que fueron diseñadas con antelación por fuera
+                                    de la construcción
                                 </div>
                                 <input type="radio" name="tipo_select" id="pref" puntos="2">
                                 <label for="pref">D.Prefabricado</label>
@@ -754,14 +757,15 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-8 is-showing">
+            <div class="modal-body modal-body-step-8">
                 <form>
                     <div>
                         <div class="title">Tipo de entrepiso </div>
                         <div class="description">Como se encuentra construido el piso de la vivienda</div>
                         <div class="contenedor_radio label cajaMensaje">
                             <div id="losa" class="mensajeOculto">
-                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo.
+                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón
+                                en el techo.
                             </div>
                             <input type="radio" name="entrepiso" id="losa" puntos="1">
                             <label for="losa">A.Losa de concreto aligerado</label>
@@ -791,7 +795,8 @@
                         <div class="title">Tipo de techo o cubierta</div>
                         <div class="contenedor_radio label cajaMensaje">
                             <div id="losa" class="mensajeOculto">
-                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo.
+                                conformada por concreto armado, estas se evidencian ya que forman una especie de cajón
+                                en el techo.
                             </div>
                             <input type="radio" name="techo" id="losaConcreto" puntos="1">
                             <label for="losaConcreto">A.Losa de concreto aligerada</label>
@@ -842,7 +847,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-body modal-body-step-9">
+            <div class="modal-body modal-body-step-9 is-showing">
                 <form>
                     <div>
                         <div class="title">Estado de daño de la edificación </div>
@@ -857,7 +862,8 @@
                         </div>
                         <div id="contenedorHundimiento" class="ocultarHijos">
                             <div id="imagenesHundimiento"
-                                style="display: flex; justify-content: center; flex-wrap:wrap"></div>
+                                style="display: flex; justify-content: center; flex-wrap:wrap">
+                            </div>
                             <div class="inputImage">
                                 <div>
                                     <label for="inputImageHundimiento">Agregar Imagen</label>
@@ -865,9 +871,11 @@
                                 </div>
                                 <input id="inputImageHundimiento" accept="image/*" type="file">
                             </div>
-                            <ol style="color:rgb(125, 122, 122);"> <p>Suba 2 imagenes asi:</p>
+                            <ol style="color:rgb(125, 122, 122);">
+                                <p>Suba 2 imagenes asi:</p>
                                 <li>Lejana al hundimiento horizontal</li>
-                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o cuaderno al lado del hundimiento)</li>
+                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o
+                                    cuaderno al lado del hundimiento)</li>
                             </ol>
                         </div>
                         <!-- (En caso que la respuesta sea si, debe de subir una imagen) -->
@@ -896,12 +904,14 @@
                                 </div>
                                 <input id="inputImageGrieta" accept="image/*" type="file">
                             </div>
-                            <ol  style="color:rgb(125, 122, 122);"> <p>Suba 2 imagenes asi:</p>
+                            <ol style="color:rgb(125, 122, 122);">
+                                <p>Suba 2 imagenes asi:</p>
                                 <li>Lejana a la grieta</li>
-                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o cuaderno al lado de la grieta)</li>
+                                <li>Cercana con algún objeto con el que se pueda dimensionar. (ejemplo: un lápiz o
+                                    cuaderno al lado de la grieta)</li>
                             </ol>
                         </div>
-                        
+
                     </div>
                     <div class="text-center fade-in">
                         <div id="parteNueve" class="button">Enviar</div>
@@ -914,7 +924,7 @@
 
     </div>
 
-   
+
 
 
 

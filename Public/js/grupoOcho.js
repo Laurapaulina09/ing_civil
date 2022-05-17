@@ -10,7 +10,7 @@ $("#parteOcho").click(function () {
     if (d.tipoEntrePiso != null && d.tipoTecho) {
         d.tipoEntrePisoPts = validarRadio('entrepiso').getAttribute('puntos')
         d.tipoTechoPts = validarRadio('techo').getAttribute('puntos')
-        postSencilla('', d)
+        postSencilla('/parte8', d)
             .then(respuesta => {
                 cambio($btn)
             })

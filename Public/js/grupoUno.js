@@ -1,6 +1,7 @@
 
 //Almacenado de información parte uno
 $("#parteUno").click(function () {
+    console.log('ss')
     let $btn = $(this)
     let d = {
         primerNombre: $('#nombreUno')[0].value.trim(),
@@ -21,11 +22,9 @@ $("#parteUno").click(function () {
     let nombres=new RegExp("^([A-ZÁÉÍÓÚ|a-záéíóú]{1}[a-zñáéíóú]+[\s]*)+$")
     let telefono=new RegExp("^[3]{1}[0-9]{9}$")
     let cc = new RegExp("^[1-9]{1}[0-9]{7,9}$")
-
-    if(nombres.test(d.primerNombre) && nombres.test(d.segundoNombre) && nombres.test(d.primerApellido) && nombres.test(d.segundoApellido) && telefono.test(d.celular) && correo.test(d.email) && cc.test(d.cedula) && d.direccion.length >= 9 && d.departamento.length >= 1 && d.municipio.length >= 1 && d.barrio.length >= 4 && d.tratamientoDatos){
+    if(nombres.test(d.primerNombre) && d.segundoNombre === '' ? true : nombres.test(d.segundoNombre) && nombres.test(d.primerApellido) && d.segundoApellido === '' ? true : nombres.test(d.segundoApellido) && telefono.test(d.celular) && correo.test(d.email) && cc.test(d.cedula) && d.direccion.length >= 9 && d.departamento.length >= 1 && d.municipio.length >= 1 && d.barrio.length >= 4 && d.tratamientoDatos){
         localStorage.setItem('cedula', d.cedula)
-        //cambio($btn)
-        fetch('', {
+        fetch('/crearUsuario', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -40,6 +39,5 @@ $("#parteUno").click(function () {
         })
     }else{
         $("#mensaje")[0].innerHTML=`<info-mensaje typeMessage="error" idElement="mensaje" message="Verifica la información ingresada y/o que hayas llenado todos los campos"></info-mensaje>`
-        //cambio($btn)
     }
 })

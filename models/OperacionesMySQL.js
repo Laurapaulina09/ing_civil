@@ -84,7 +84,7 @@ Conexion.almacenarEncuestaP4 = (datos, cb) => {
     })
 }
 
-Conexion.almacenarEncuestaP5 = (datos, cb) => {
+Conexion.almacenarEncuestaP6 = (datos, cb) => {
     let sql = `UPDATE  EncuestaViviendaExterior
         SET comparteMurosConVecinos= "${datos.comparteMuro}",
         comparteMurosConVecinosPuntos="${datos.comparteMuroPts}",
@@ -104,7 +104,7 @@ Conexion.almacenarEncuestaP5 = (datos, cb) => {
     })
 }
 
-Conexion.almacenarEncuestaP6 = (datos, cb) => {
+Conexion.almacenarEncuestaP5 = (datos, cb) => {
     let sql = `UPDATE  EncuestaViviendaExterior
         SET totalPisos= "${datos.numPisos}",
         totalPisosPuntos="${datos.numPisosPts}",

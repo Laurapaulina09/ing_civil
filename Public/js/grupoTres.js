@@ -24,10 +24,10 @@ $("#parteTres").click(function () {
             }
         */
         var formData = new FormData();
-        formData.append("foto", imagen);
-        postSencilla('',tercerGrupo)
+        formData.append("foto", fotoFrente);
+        postSencilla('/parte3A',tercerGrupo)
         .then(response=>{
-            envioFile(url, formData).then(res => {
+            envioFile('/p3BsubirImagenFrente/'+localStorage.getItem('cedula'), formData).then(res => {
                 cambio($btn)
             })
         })

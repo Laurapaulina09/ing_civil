@@ -11,13 +11,12 @@ $("#parteDos").click(function(){
     }
     console.log(d)
     if(d.nivelFormacion != null && d.anoConstruccion != null && d.entidad != null){
-        d.formacion=d.nivelFormacion.getAttribute("id")
+        d.nivelFormacion=d.nivelFormacion.getAttribute("id")
         d.anoConstruccionPts=d.anoConstruccion.getAttribute("puntos")
         d.anoConstruccion=d.anoConstruccion.getAttribute("id")
         d.entidadPts=d.entidad.getAttribute("puntos")
         d.entidad=d.entidad.getAttribute("id")
-        console.log(d)
-        fetch('', {
+        fetch('/parte2', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'

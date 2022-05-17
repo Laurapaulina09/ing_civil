@@ -32,7 +32,7 @@ $("#parteCuatro").click(function () {
         }
         d.usoAnterior = d.usoAnterior==null? null : d.usoAnterior.getAttribute("id")
         console.log(d)
-        postSencilla('', d)
+        postSencilla('/parte4', d)
         .then(respuesta=>{
             cambio($btn)
         })

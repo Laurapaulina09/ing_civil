@@ -76,22 +76,24 @@ $("#parteNueve").click(function(){
         }else{
             var formData = new FormData();
             if(d.danoGrietas=='si'){
-                formData.append("foto1Grietas", imagenesGrietas[0]);
-                formData.append("foto2Grietas", imagenesGrietas[1]);
+                formData.append("foto", imagenesGrietas[0]);
+                formData.append("foto", imagenesGrietas[1]);
             }
             if(d.danoHundimiento=='si'){
-                formData.append("foto1Hundimiento", imagenesHundimiento[0]);
-                formData.append("foto2Hundimiento", imagenesHundimiento[1]);
+                formData.append("foto1", imagenesHundimiento[0]);
+                formData.append("foto2", imagenesHundimiento[1]);
             }
             if(d.danoGrietas=='no' && d.danoHundimiento=='no'){
-                formData.append("foto1Grietas", null);
-                formData.append("foto2Grietas", null);
-                formData.append("foto1Hundimiento", null);
-                formData.append("foto2Hundimiento", null);
+                formData.append("foto", null);
+                formData.append("foto", null);
+                formData.append("foto1", null);
+                formData.append("foto2", null);
             }
-            envioFile('', formData, d).then(res => {
-                localStorage.clear('cedula')
-                cambio($btn)
+            envioFile('/parte9A/'+ localStorage.getItem('cedula'), formData).then(res => {
+                postSencilla('/parte9B', d)
+                .then(resp=>{
+                    cambio($btn)
+                })
             })
         }
     }else{
