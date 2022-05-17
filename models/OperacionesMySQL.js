@@ -48,11 +48,9 @@ Conexion.almacenarEncuestaP3A = (datos, cb) => {
 
 Conexion.almacenarImagenEnViviendas = (datos, cb) => {
     let  sql = `UPDATE ${datos.nombreTabla} 
-    SET ${datos.columna}="${datos.imagenFrente}" 
+    SET ${datos.columna}="${datos.ruta}" 
     WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
-    //console.log(datos);
-    console.log("errorr");
-    console.log(sql);
+   console.log(datos);
     conectar.query(sql, function(err, res) {
         if (err) {
             console.log("error al almacenar la imagen en la tabla: "+datos.nombreTabla)
@@ -167,6 +165,34 @@ Conexion.almacenarEncuestaP7 = (datos, cb) => {
      })
  }
 
+ /*
+  `estadoEdificacion` VARCHAR(45) NULL,
+  `estadoEdificacionPuntos` INT(2) NULL,
+  `tieneGrietas` VARCHAR(45) NULL,
+  `tieneGrietasPuntos` INT(2) NULL,
+          danoGrietas:parametros.danoGrietas,
+        danoGrietasPts:parametros.danoGrietasPts,
+        danoHundimiento:parametros.danoHundimiento,
+        danoHundimientoPts:parametros.danoHundimientoPts,
+        cedula:parametros.cedula
+ */
+ Conexion.almacenarEncuestaP9 = (datos, cb) => {
+    let sql = `UPDATE  EncuestaViviendaInterior 
+    SET estadoEdificacion= "${datos.danoHundimiento}",
+    estadoEdificacionPuntos ="${datos.danoHundimientoPts}",
+    tieneGrietas="${datos.danoGrietas}",
+    tieneGrietasPuntos="${datos.danoGrietasPts}"
+    WHERE Encuesta_id=(select id from Encuesta where encuestadoCedula="${datos.cedula}")`;
+    console.log(sql)
+    console.log(datos)
+     conectar.query(sql, function (err, res) {
+         if (err) {
+             console.log(err)
+         } else {
+             cb()
+         }
+     })
+ }
 
  Conexion.getPuntosTablaEncuesta = (datos, cb) => {
     let sql = `SELECT  añoConstruccionPuntos,construidaPorEntidadPuntos 

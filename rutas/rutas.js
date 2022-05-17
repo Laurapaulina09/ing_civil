@@ -66,7 +66,7 @@ rutas
 .put('/p3BsubirImagenFrente', multer.single('foto'), (req, res) => {
     console.log('Se ha cargado la foto')
     let datos={
-        imagenFrente:`\\\\img\\\\${req.file.filename}`,
+        ruta:`\\\\img\\\\${req.file.filename}`,
         cedula:req.body.cedula,
         nombreTabla:'EncuestaViviendaExterior',
         columna:'imagenFrente',
@@ -165,11 +165,12 @@ rutas
              });
     })
 })
-/* 
-.put('/p3BsubirImagenesGrietaYHundimiento', multer.array('foto',4), (req, res) => {
+
+
+.put('/parte9A/:cedula', multer.array('foto',4), (req, res) => {
 let  arrayDatos=[4];
 let nomTabla='EncuestaViviendaInterior';
-let columnaNom=[4]=["estadoEdifacionImgLejana", "estadoEdifacionImgCercanaAObjeto", "tieneGrietasImgLejana",
+let columnaNom=["estadoEdifacionImgLejana", "estadoEdifacionImgCercanaAObjeto", "tieneGrietasImgLejana",
 "EncuestaViviendaImgCercanaAObjeto"]
 let foto_OK=[4]
 var respuestaSubida=[4];
@@ -179,13 +180,13 @@ for (var i = 0; i < 4; i++) {
     foto_OK[i]=false;
     let column=columnaNom[i]
     arrayDatos[i]={
-        ruta:`\\\\img\\\\${req.file.filename}`,
-        cedula:req.body.cedula,
+        ruta:`\\\\img\\\\${req.files[i].filename}`,
+        cedula:req.params.cedula,
         nombreTabla:nomTabla,
         columna:column
     }
 
-    conectar.almacenarImagenEnViviendas(datos[i],(respuesta)=>{
+    conectar.almacenarImagenEnViviendas(arrayDatos[i],(respuesta)=>{
         if (respuesta.lenght>=1) {
             //Se ha cargado la foto actual.
             foto_OK[i]=true;
@@ -213,18 +214,22 @@ return res.status(codigo).send(
      ruta: respuestaSubida.rutaImagen
     })
 })
- */ 
 
- /*
-
-  `alturaEntrePisosPuntos` INT(2) NULL,
-  `materialDeConstruccionPuntos` INT(2) NULL,
-  `tipoMamposteriaConcretoPrefabricadoPuntos` INT(2) NULL,
-  `tipoEntrePisoPuntos` INT(2) NULL,
-  `tipoTechoPuntos` INT(2) NULL,
-  `estadoEdificacionPuntos` INT(2) NULL,
-  `tieneGrietasPuntos` INT(2) NULL,
-*/
+.post("/parte9B", (req, res) => {
+    let  parametros=req.body;
+    var datos = {
+        danoGrietas:parametros.danoGrietas,
+        danoGrietasPts:parametros.danoGrietasPts,
+        danoHundimiento:parametros.danoHundimiento,
+        danoHundimientoPts:parametros.danoHundimientoPts,
+        cedula:parametros.cedula
+    }
+    conectar.almacenarEncuestaP9(datos, () => {
+        res.status(200).send({
+            menssage:"Se ha añadido la Parte 9B"
+             });
+    })
+})
 .post("/gravedadVivienda:/cedula", (req, res) => {
     datos={
         cedula: req.params.cedula
